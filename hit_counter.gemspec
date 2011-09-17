@@ -5,7 +5,7 @@
 
 Gem::Specification.new do |s|
   s.name = "hit_counter"
-  s.version = "0.0.0"
+  s.version = "0.0.1"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Roderick Monje"]
@@ -23,8 +23,8 @@ Gem::Specification.new do |s|
     "README.rdoc",
     "Rakefile",
     "VERSION",
+    "hit_counter.gemspec",
     "lib/hit_counter.rb",
-    "lib/tasks/install.rake",
     "public/images/digits/celtic/0.gif",
     "public/images/digits/celtic/1.gif",
     "public/images/digits/celtic/2.gif",
