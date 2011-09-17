@@ -29,6 +29,14 @@ Ruby version of that old 90s chestnut, the web-site hit counter.
 
    <img alt="Hit Counter" border="0" src="/hit-counter?url=http://cnn.com&style=1" />
 
+== How to Customize the Hit-Counter Image
+
+1. Create a GIF for each of the digits, 0.gif through 9.gif.
+
+2. Add the images to a folder named after your new style in public/images/digits.
+
+3. Add the folder name to HitCounter::STYLES. In your HTML, specify the new style with a params[:style] equal to its index in the array plus one.
+
 == Contributing to hit_counter
 
 * Check out the latest master to make sure the feature hasn't been implemented or the bug hasn't been fixed yet
