@@ -3,7 +3,7 @@
 require 'rubygems'
 require 'bundler'
 begin
-  Bundler.setup(:default, :development)
+  Bundler.setup(:default, :development, :test)
 rescue Bundler::BundlerError => e
   $stderr.puts e.message
   $stderr.puts "Run `bundle install` to install missing gems"
@@ -17,8 +17,7 @@ Jeweler::Tasks.new do |gem|
   gem.name = "hit_counter"
   gem.homepage = "http://github.com/ivanoblomov/hit_counter"
   gem.license = "MIT"
-  gem.summary = %Q{TODO: one-line summary of your gem}
-  gem.description = %Q{TODO: longer description of your gem}
+  gem.summary = %Q{Ruby version of that old 90s chestnut, the web-site hit counter.}
   gem.email = "rod@seologic.com"
   gem.authors = ["Roderick Monje"]
   # dependencies defined in Gemfile
