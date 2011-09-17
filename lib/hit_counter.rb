@@ -12,6 +12,10 @@
 #
 # You should have received a copy of the GNU General Public License
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
+require 'addressable/uri'
+require 'mongoid'
+require 'rmagick'
+
 class HitCounter
   include Mongoid::Document
   include Mongoid::Timestamps
@@ -101,5 +105,19 @@ class HitCounter
 
   def self.normalize_url value
     value !~ %r{^http://} ? "http://#{value}" : value
+  end
+end
+
+if defined? Rails
+  class Railtie < Rails::Railtie
+    rake_tasks do
+      namespace :hit_counter do
+        desc 'Install HitCounter into your app.'
+        task :install do
+          puts 'Installing required image files...'
+          system "rsync -ruv #{Gem.searcher.find('hit_counter').full_gem_path}/public ."
+        end
+      end
+    end
   end
 end
