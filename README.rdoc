@@ -4,38 +4,67 @@ Ruby version of that old 90s chestnut, the web-site hit counter.
 
 == How to Install
 
-1. Install the gem.
+1. Install the gem and supporting files.
 
-   Gemfile:
+   +Gemfile+:
 
      gem 'hit_counter'
 
+   Run:
+
+     bundle
+     rake hit_counter:install
+
 2. Add a controller action to your app.
 
-   controller.rb:
+   +application_controller.rb+:
 
      def hit_counter
        return if params[:url].blank?
+
+       # find or create a hit counter for this URL
        hc = HitCounter.get params[:url]
+
+       # increase the tally by one
        hc.increment
+
+       # get the image as a blog and stream it to the browser
        send_data hc.image(params[:style]).to_blob, :disposition => 'inline', :filename => "#{hc.hits}.png", :type => :png
      end
 
-   routes.rb:
+   +routes.rb+:
 
-     get 'hit-counter' => 'webmaster_tools#hit_counter' # technically should be PUT, but GET makes integration simpler
+     get 'hit-counter' => 'application#hit_counter' # technically should be POST/PUT, but GET makes integration simpler
 
 3. Add the hit-counter image tag to your site's HTML:
 
-   <img alt="Hit Counter" border="0" src="/hit-counter?url=http://cnn.com&style=1" />
+     <img alt="Hit Counter" border="0" src="/hit-counter?url=http://cnn.com&style=1" />
 
 == How to Customize the Hit-Counter Image
 
-1. Create a GIF for each of the digits, 0.gif through 9.gif.
+=== Use an Existing Style
 
-2. Add the images to a folder named after your new style in public/images/digits.
+* You can use one of the three included styles by specifying a different +style+ param in the HTML:
 
-3. Add the folder name to HitCounter::STYLES. In your HTML, specify the new style with a params[:style] equal to its index in the array plus one.
+    <img alt="Hit Counter" border="0" src="/hit-counter?url=cnn.com&style=1" />
+
+  The included styles are:
+
+  http://github.com/ivanoblomov/hit_counter/raw/master/public/images/digits/odometer/1.gif odometer
+  http://github.com/ivanoblomov/hit_counter/raw/master/public/images/digits/scout/2.gif scout
+  http://github.com/ivanoblomov/hit_counter/raw/master/public/images/digits/celtic/3.gif Celtic
+
+=== Create Your Own Style
+
+1. To add your own style, create a GIF for each of the digits, +0.gif+ through +9.gif+. Save the images in a folder named after your new style in +public/images/digits+.
+
+2. In your controller, declare a new +STYLES+ constant and add the folder name to it:
+
+     HitCounter::STYLES = ['odometer', 'scout', 'celtic', '(folder name)']
+
+3. In your HTML, specify the new style with a +style+ param equal to its index in the array plus one (unlike arrays, the +style+ param's index is one-based):
+
+     <img alt="Hit Counter" border="0" src="/hit-counter?url=cnn.com&style=4" />
 
 == Contributing to hit_counter
 
