@@ -1,12 +1,18 @@
 $LOAD_PATH.unshift(File.join(File.dirname(__FILE__), '..', 'lib'))
 $LOAD_PATH.unshift(File.dirname(__FILE__))
+require 'addressable/uri'
+require 'mongoid'
+require 'rmagick'
 require 'rspec'
+
 require 'hit_counter'
 
-# Requires supporting files with custom matchers and macros, etc,
-# in ./support/ and its subdirectories.
-Dir["#{File.dirname(__FILE__)}/support/**/*.rb"].each {|f| require f}
+Mongoid::Config.from_hash 'database' => 'hit_counter'
+Mongoid.logger = false
 
-RSpec.configure do |config|
-  
+# Stub Rails root during tests.
+module Rails
+  def self.root
+    '.'
+  end
 end

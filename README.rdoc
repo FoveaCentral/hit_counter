@@ -1,9 +1,36 @@
 = hit_counter
 
-Description goes here.
+Ruby version of that old 90s chestnut, the web-site hit counter.
+
+== How to Install
+
+1. Install the gem.
+
+   Gemfile:
+
+     gem 'hit_counter'
+
+2. Add a controller action to your app.
+
+   controller.rb:
+
+     def hit_counter
+       return if params[:url].blank?
+       hc = HitCounter.get params[:url]
+       hc.increment
+       send_data hc.image(params[:style]).to_blob, :disposition => 'inline', :filename => "#{hc.hits}.png", :type => :png
+     end
+
+   routes.rb:
+
+     get 'hit-counter' => 'webmaster_tools#hit_counter' # technically should be PUT, but GET makes integration simpler
+
+3. Add the hit-counter image tag to your site's HTML:
+
+   <img alt="Hit Counter" border="0" src="/hit-counter?url=http://cnn.com&style=1" />
 
 == Contributing to hit_counter
- 
+
 * Check out the latest master to make sure the feature hasn't been implemented or the bug hasn't been fixed yet
 * Check out the issue tracker to make sure someone already hasn't requested it and/or contributed it
 * Fork the project
@@ -16,4 +43,3 @@ Description goes here.
 
 Copyright (c) 2011 Roderick Monje. See LICENSE.txt for
 further details.
-
