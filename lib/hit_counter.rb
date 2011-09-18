@@ -79,8 +79,8 @@ class HitCounter
   #   - +style_number+ -> the image style
   # * *Returns*
   #   - the current hit count as a PNG image
-  def image style_number = 0
-    image = HitCounter.cat_image self.hits.to_s, style_number.to_i - 1
+  def image style_number
+    image = HitCounter.cat_image self.hits.to_s, HitCounter.normalize_style_number(style_number)
     image.format = 'png'
     image
   end
@@ -98,9 +98,20 @@ class HitCounter
 
   STYLES = ['odometer', 'scout', 'celtic']
 
-  def self.cat_image number = '0', style_index = 0, images = Magick::ImageList.new
+  def self.cat_image number, style_index, images = Magick::ImageList.new
     return images.append(false) if number.blank?
     HitCounter.cat_image number[1..-1], style_index, images << Magick::Image.read("#{Rails.root}/public/images/digits/#{STYLES[style_index]}/#{number[0..0]}.gif").first
+  end
+
+  def self.normalize_style_number value
+    value = value.to_i
+    value -= 1 if value > 0
+
+    if value >= 0 && value < STYLES.size
+      return value
+    else
+      value % 3
+    end
   end
 
   def self.normalize_url value
