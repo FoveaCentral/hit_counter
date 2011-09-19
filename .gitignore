@@ -1,4 +1,5 @@
 *.gem
+.bundle
 doc
 Gemfile.lock
 git.rake
