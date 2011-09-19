@@ -5,11 +5,11 @@
 
 Gem::Specification.new do |s|
   s.name = "hit_counter"
-  s.version = "0.0.2"
+  s.version = "0.0.3"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Roderick Monje"]
-  s.date = "2011-09-18"
+  s.date = "2011-09-19"
   s.email = "rod@seologic.com"
   s.extra_rdoc_files = [
     "LICENSE.txt",
@@ -69,17 +69,20 @@ Gem::Specification.new do |s|
 
     if Gem::Version.new(Gem::VERSION) >= Gem::Version.new('1.2.0') then
       s.add_runtime_dependency(%q<addressable>, [">= 0"])
+      s.add_runtime_dependency(%q<bson_ext>, [">= 0"])
       s.add_runtime_dependency(%q<mongoid>, [">= 0"])
       s.add_runtime_dependency(%q<rmagick>, ["= 2.12.2"])
       s.add_development_dependency(%q<jeweler>, [">= 0"])
     else
       s.add_dependency(%q<addressable>, [">= 0"])
+      s.add_dependency(%q<bson_ext>, [">= 0"])
       s.add_dependency(%q<mongoid>, [">= 0"])
       s.add_dependency(%q<rmagick>, ["= 2.12.2"])
       s.add_dependency(%q<jeweler>, [">= 0"])
     end
   else
     s.add_dependency(%q<addressable>, [">= 0"])
+    s.add_dependency(%q<bson_ext>, [">= 0"])
     s.add_dependency(%q<mongoid>, [">= 0"])
     s.add_dependency(%q<rmagick>, ["= 2.12.2"])
     s.add_dependency(%q<jeweler>, [">= 0"])
