@@ -17,7 +17,7 @@ require 'bundler/setup'
 Bundler.setup :default
 require 'addressable/uri'
 require 'mongoid'
-require 'rmagick'
+require 'RMagick'
 
 class HitCounter
   include Mongoid::Document
