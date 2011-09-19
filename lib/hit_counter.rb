@@ -14,7 +14,7 @@
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
 require 'rubygems'
 require 'bundler/setup'
-
+Bundler.setup :default
 require 'addressable/uri'
 require 'mongoid'
 require 'rmagick'
