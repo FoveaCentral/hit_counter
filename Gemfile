@@ -1,9 +1,9 @@
 source 'http://rubygems.org'
 
-gem 'addressable'
+gem 'addressable', :require => 'addressable/uri'
 gem 'bson_ext'
-gem 'mongoid'
-gem 'rmagick', '2.12.2' # version compatible with heroku
+gem 'mongoid', :require => 'mongoid'
+gem 'rmagick', '2.12.2', :require => 'RMagick'# version compatible with heroku
 
 group :development do
   gem 'jeweler'
