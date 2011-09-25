@@ -46,14 +46,17 @@ class HitCounter
   # Class methods ==================================================================================
 
   # Returns a <code>HitCounter</code> matching the specified URL. The HitCounter is created if no
-  # matching one is found.
+  # matching one is found. In the latter case, the hits argument specifies the starting count.
   #
   # * *Args*
   #   - +url+ -> the URL for the site being counted
+  #   - +hits+ -> the number of hits to start with
   # * *Returns*
   #   - the site's HitCounter
-  def self.get url
-    self.find_or_create_by :url => HitCounter.normalize_url(url)
+  def self.get url, hits = 0
+    args = {:url => HitCounter.normalize_url(url)}
+    args[:hits] = hits unless HitCounter.exists? :conditions => args
+    self.find_or_create_by args
   end
 
   # Instance methods: Overrides ====================================================================

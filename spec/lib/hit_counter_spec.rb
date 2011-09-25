@@ -11,6 +11,12 @@ describe HitCounter do
       describe 'document count' do
         specify { HitCounter.count.should == 1 }
       end
+
+      context 'with starting count 10' do
+        describe 'hits' do
+          specify { HitCounter.get(@hit_counter.url, 10).hits.should == 0 }
+        end
+      end
     end
 
     context 'when new URL' do
@@ -18,6 +24,12 @@ describe HitCounter do
 
       describe 'document count' do
         specify { HitCounter.count.should == 2 }
+      end
+
+      context 'with starting count 10' do
+        describe 'hits' do
+          specify { HitCounter.get('www.nytimes.com', 10).hits.should == 10 }
+        end
       end
     end
   end
