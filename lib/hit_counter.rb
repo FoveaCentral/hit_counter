@@ -61,6 +61,16 @@ class HitCounter
 
   # Instance methods: Overrides ====================================================================
 
+  # Sets the number of hits.
+  #
+  # * *Args*
+  #   - +value+ -> the number of hits
+  # * *Returns*
+  #   - the value
+  def hits= value
+    self[:hits] = value.to_i
+  end
+
   # Sets the URL to be tracked. The http prefix is optional.
   #
   # * *Args*

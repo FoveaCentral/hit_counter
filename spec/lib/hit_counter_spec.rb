@@ -8,13 +8,15 @@ describe HitCounter do
 
   describe '#get' do
     context 'when existing URL' do
+      before { @hit_counter2 = HitCounter.get @hit_counter.url, 10 }
+
       describe 'document count' do
         specify { HitCounter.count.should == 1 }
       end
 
       context 'with starting count 10' do
         describe 'hits' do
-          specify { HitCounter.get(@hit_counter.url, 10).hits.should == 0 }
+          specify { @hit_counter2.hits.should == 0 }
         end
       end
     end
@@ -26,9 +28,15 @@ describe HitCounter do
         specify { HitCounter.count.should == 2 }
       end
 
+      context 'with blank starting count' do
+        describe '#hits' do
+          specify { HitCounter.get('www.nytimes.com', nil).hits.should == 0 }
+        end
+      end
+
       context 'with starting count 10' do
-        describe 'hits' do
-          specify { HitCounter.get('www.nytimes.com', 10).hits.should == 10 }
+        describe '#hits' do
+          specify { HitCounter.get('online.wsj.com', 10).hits.should == 10 }
         end
       end
     end
@@ -54,10 +62,12 @@ describe HitCounter do
   end
 
   describe '#normalize_style_number' do
-    context 'when undefined' do
-      it 'should return 0' do
-        HitCounter.normalize_style_number(nil).should == 0
-      end
+    context 'when nil' do
+      it { HitCounter.normalize_style_number(nil).should be_zero }
+    end
+
+    context 'when empty string' do
+      it { HitCounter.normalize_style_number('').should be_zero }
     end
 
     context 'when within range' do
