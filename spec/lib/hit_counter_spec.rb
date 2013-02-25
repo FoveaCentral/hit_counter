@@ -16,7 +16,7 @@ describe HitCounter do
 
       context 'with starting count 10' do
         describe 'hits' do
-          specify { @hit_counter2.hits.should == 0 }
+          specify { @hit_counter2.hits.should == 10 }
         end
       end
     end
@@ -58,7 +58,6 @@ describe HitCounter do
     subject { @hit_counter.image '1' }
 
     it { should be_a Magick::Image }
-    pending 'should reflect hits'
   end
 
   describe '#normalize_style_number' do
