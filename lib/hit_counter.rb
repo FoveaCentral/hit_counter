@@ -55,7 +55,7 @@ class HitCounter
   #   - the site's HitCounter
   def self.get url, hits = 0
     args = {:url => HitCounter.normalize_url(url)}
-    args[:hits] = hits unless HitCounter.exists? :conditions => args
+    args[:hits] = hits unless HitCounter.where(:conditions => args).exists?
     self.find_or_create_by args
   end
 
