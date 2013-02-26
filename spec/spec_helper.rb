@@ -1,5 +1,9 @@
 $LOAD_PATH.unshift(File.join(File.dirname(__FILE__), '..', 'lib'))
 $LOAD_PATH.unshift(File.dirname(__FILE__))
+
+require 'simplecov'
+SimpleCov.start
+
 require 'addressable/uri'
 require 'mongoid'
 require 'rmagick'
