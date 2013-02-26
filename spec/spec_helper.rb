@@ -6,7 +6,7 @@ SimpleCov.start
 
 require 'addressable/uri'
 require 'mongoid'
-require 'rmagick'
+require 'RMagick'
 require 'rspec'
 
 require 'hit_counter'
