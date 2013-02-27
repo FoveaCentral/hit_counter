@@ -2,7 +2,7 @@
 
 Ruby version of that old 90s chestnut, <BLINK>the web-site hit counter</BLINK>.
 
-== How to Install
+== Installation
 
 1. Install the gem and supporting files.
 
@@ -26,7 +26,7 @@ Ruby version of that old 90s chestnut, <BLINK>the web-site hit counter</BLINK>.
        # increase the tally by one
        hc.increment
 
-       # get the image as a blog and stream it to the browser
+       # get the image as a blob and stream it to the browser
        send_data hc.image(params[:style]).to_blob, :disposition => 'inline', :filename => "#{hc.hits}.png", :type => :png
      end
 
@@ -37,7 +37,7 @@ Ruby version of that old 90s chestnut, <BLINK>the web-site hit counter</BLINK>.
 
      <img alt="Hit Counter" border="0" src="/hit-counter?url=http://cnn.com&style=1" />
 
-== How to Customize the Hit-Counter Image
+== Customizing the Hit-Counter Image
 
 === Use an Existing Style
 
