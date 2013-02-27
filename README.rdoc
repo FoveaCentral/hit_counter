@@ -1,4 +1,4 @@
-= HitCounter {<img src="https://secure.travis-ci.org/ivanoblomov/hit_counter.png"/>}[http://travis-ci.org/ivanoblomov/hit_counter]
+= HitCounter {<img src="https://secure.travis-ci.org/ivanoblomov/hit_counter.png"/>}[http://travis-ci.org/ivanoblomov/hit_counter] {<img src="https://gemnasium.com/ivanoblomov/hit_counter.png" alt="Dependency Status" />}[https://gemnasium.com/ivanoblomov/hit_counter]
 
 Ruby version of that old 90s chestnut, <blink>the web-site hit counter</blink>.
 
@@ -6,8 +6,7 @@ Ruby version of that old 90s chestnut, <blink>the web-site hit counter</blink>.
 
 1. Install the gem and supporting files.
 
-   +Gemfile+:
-
+   +Gemfile+
      gem 'hit_counter'
 
    Run:
@@ -17,8 +16,7 @@ Ruby version of that old 90s chestnut, <blink>the web-site hit counter</blink>.
 
 2. Add a controller action to your app.
 
-   +application_controller.rb+:
-
+   +application_controller.rb+
      def hit_counter
        return if params[:url].blank?
 
@@ -32,8 +30,7 @@ Ruby version of that old 90s chestnut, <blink>the web-site hit counter</blink>.
        send_data hc.image(params[:style]).to_blob, :disposition => 'inline', :filename => "#{hc.hits}.png", :type => :png
      end
 
-   +routes.rb+:
-
+   +routes.rb+
      get 'hit-counter' => 'application#hit_counter' # technically should be POST/PUT, but GET makes integration simpler
 
 3. Add the hit-counter image tag to your site's HTML:
