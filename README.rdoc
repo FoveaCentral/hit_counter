@@ -1,6 +1,6 @@
 = HitCounter {<img src="https://codeclimate.com/github/ivanoblomov/hit_counter.png" />}[https://codeclimate.com/github/ivanoblomov/hit_counter] {<img src="https://secure.travis-ci.org/ivanoblomov/hit_counter.png"/>}[http://travis-ci.org/ivanoblomov/hit_counter] {<img src="https://gemnasium.com/ivanoblomov/hit_counter.png" alt="Dependency Status" />}[https://gemnasium.com/ivanoblomov/hit_counter]
 
-Ruby version of that old 90s chestnut, <blink>the web-site hit counter</blink>.
+Ruby version of that old 90s chestnut, <BLINK>the web-site hit counter</BLINK>.
 
 == How to Install
 
