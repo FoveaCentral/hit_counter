@@ -11,12 +11,12 @@ describe HitCounter do
       before { @hit_counter2 = HitCounter.get @hit_counter.url, 10 }
 
       describe 'document count' do
-        specify { HitCounter.count.should == 1 }
+        it { expect(HitCounter.count).to eq 1 }
       end
 
       context 'with starting count 10' do
         describe 'hits' do
-          specify { @hit_counter2.hits.should == 10 }
+          it { expect(@hit_counter2.hits).to eq 10 }
         end
       end
     end
@@ -25,18 +25,18 @@ describe HitCounter do
       before { HitCounter.get 'www.cnn.com' }
 
       describe 'document count' do
-        specify { HitCounter.count.should == 2 }
+        it { expect(HitCounter.count).to eq 2 }
       end
 
       context 'with blank starting count' do
         describe '#hits' do
-          specify { HitCounter.get('www.nytimes.com', nil).hits.should == 0 }
+          it { expect(HitCounter.get('www.nytimes.com', nil).hits).to eq 0 }
         end
       end
 
       context 'with starting count 10' do
         describe '#hits' do
-          specify { HitCounter.get('online.wsj.com', 10).hits.should == 10 }
+          it { expect(HitCounter.get('online.wsj.com', 10).hits).to eq 10 }
         end
       end
     end
@@ -45,61 +45,61 @@ describe HitCounter do
   describe '#hits' do
     subject { @hit_counter.hits }
 
-    it { should == 0 }
+    it { expect(subject).to eq 0 }
 
     context 'when incremented' do
       before { @hit_counter.increment }
 
-      specify { @hit_counter.hits.should == 1 }
+      it { expect(@hit_counter.hits).to eq 1 }
     end
   end
 
   describe '#image' do
     subject { @hit_counter.image '1' }
 
-    it { should be_a Magick::Image }
+    it { expect(subject).to be_a Magick::Image }
   end
 
   describe '#normalize_style_number' do
     context 'when nil' do
-      it { HitCounter.normalize_style_number(nil).should be_zero }
+      it { expect(HitCounter.normalize_style_number(nil)).to be_zero }
     end
 
     context 'when empty string' do
-      it { HitCounter.normalize_style_number('').should be_zero }
+      it { expect(HitCounter.normalize_style_number('')).to be_zero }
     end
 
     context 'when within range' do
-      it 'should return 0 for 1' do
-        HitCounter.normalize_style_number('1').should == 0
+      it 'returns 0 for 1' do
+        expect(HitCounter.normalize_style_number('1')).to eq 0
       end
 
-      it 'should return 2 for 3' do
-        HitCounter.normalize_style_number('3').should == 2
+      it 'returns 2 for 3' do
+        expect(HitCounter.normalize_style_number('3')).to eq 2
       end
     end
 
     context 'when outside range' do
-      context 'and negative' do
-        context 'should return 2 for' do
+      context 'with negative' do
+        context 'returns 2 for' do
           it -1 do
-            HitCounter.normalize_style_number('-1').should == 2
+            expect(HitCounter.normalize_style_number('-1')).to eq 2
           end
 
           it -31 do
-            HitCounter.normalize_style_number('-31').should == 2
+            expect(HitCounter.normalize_style_number('-31')).to eq 2
           end
         end
       end
 
-      context 'and positive' do
-        context 'should return 0 for' do
+      context 'with positive' do
+        context 'returns 0 for' do
           it 4 do
-            HitCounter.normalize_style_number('4').should == 0
+            expect(HitCounter.normalize_style_number('4')).to eq 0
           end
 
           it 34 do
-            HitCounter.normalize_style_number('34').should == 0
+            expect(HitCounter.normalize_style_number('34')).to eq 0
           end
         end
       end
@@ -108,11 +108,11 @@ describe HitCounter do
 
   describe '#normalize_url' do
     context 'with "cnn.com"' do
-      specify { HitCounter.normalize_url('cnn.com').should == 'http://cnn.com' }
+      it { expect(HitCounter.normalize_url('cnn.com')).to eq 'http://cnn.com' }
     end
 
     context 'with "http://www.nytimes.com"' do
-      specify { HitCounter.normalize_url('http://www.nytimes.com').should == 'http://www.nytimes.com' }
+      it { expect(HitCounter.normalize_url('http://www.nytimes.com')).to eq 'http://www.nytimes.com' }
     end
   end
 end
