@@ -13,7 +13,7 @@ Gem::Specification.new do |s|
 
 	s.add_runtime_dependency 'addressable', '>= 0'
 	s.add_runtime_dependency 'bson_ext', '>= 0'
-	s.add_runtime_dependency 'mongoid', '~> 3'
+	s.add_runtime_dependency 'mongoid', '~> 4'
 	s.add_runtime_dependency 'rmagick', '~> 2'
 
   s.files         = `git ls-files`.split "\n"
