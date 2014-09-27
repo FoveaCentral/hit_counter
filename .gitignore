@@ -3,6 +3,5 @@
 .bundle
 coverage
 doc
-Gemfile.lock
 git.rake
 tmp
