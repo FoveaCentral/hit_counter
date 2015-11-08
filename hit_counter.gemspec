@@ -10,10 +10,10 @@ Gem::Specification.new do |s|
   s.homepage = 'http://github.com/ivanoblomov/hit_counter'
   s.authors = ['Roderick Monje']
 
+  s.add_development_dependency 'coveralls', '>= 0'
   s.add_development_dependency 'rake', '>= 0'
   s.add_development_dependency 'rspec', '>= 0'
   s.add_development_dependency 'rubocop', '>= 0'
-  s.add_development_dependency 'simplecov', '>= 0'
 
   s.add_runtime_dependency 'addressable', '>= 0'
   s.add_runtime_dependency 'bson_ext', '>= 0'
