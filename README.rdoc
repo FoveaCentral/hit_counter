@@ -1,6 +1,6 @@
 = HitCounter
 
-[![Coverage Status](https://coveralls.io/repos/ivanoblomov/hit_counter/badge.svg?branch=master&service=github)](https://coveralls.io/github/ivanoblomov/hit_counter?branch=master)
+{<img src="https://coveralls.io/repos/ivanoblomov/hit_counter/badge.svg?branch=master&service=github" />}[https://coveralls.io/github/ivanoblomov/hit_counter?branch=master]
 {<img src="https://badge.fury.io/rb/hit_counter.svg" alt="Gem Version" />}[http://badge.fury.io/rb/hit_counter]
 {<img src="https://codeclimate.com/github/ivanoblomov/hit_counter.png" />}[https://codeclimate.com/github/ivanoblomov/hit_counter]
 {<img src="https://secure.travis-ci.org/ivanoblomov/hit_counter.png"/>}[http://travis-ci.org/ivanoblomov/hit_counter]
