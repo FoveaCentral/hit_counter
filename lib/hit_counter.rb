@@ -115,7 +115,7 @@ class HitCounter
     HitCounter.cat_image number[1..-1], style_index, images << Magick::Image
       .read(
         "#{Rails.root}/public/images/digits/#{STYLES[style_index]}/"\
-        "#{number[0..0]}.gif"
+        "#{number[0..0]}.png"
       ).first
   end
 

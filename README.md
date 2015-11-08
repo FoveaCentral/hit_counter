@@ -65,18 +65,18 @@ You can use one of the three included styles by specifying a different `style` p
 
 The included styles are:
 
-![image of 1 in odometer style](http://github.com/ivanoblomov/hit_counter/raw/master/public/images/digits/odometer/1.gif)
+![image of 1 in odometer style](http://github.com/ivanoblomov/hit_counter/raw/master/public/images/digits/odometer/1.png)
 Odometer
 
-![image of 2 in scout style](http://github.com/ivanoblomov/hit_counter/raw/master/public/images/digits/scout/2.gif)
+![image of 2 in scout style](http://github.com/ivanoblomov/hit_counter/raw/master/public/images/digits/scout/2.png)
 Scout
 
-![image of 3 in celtic style](http://github.com/ivanoblomov/hit_counter/raw/master/public/images/digits/celtic/3.gif)
+![image of 3 in celtic style](http://github.com/ivanoblomov/hit_counter/raw/master/public/images/digits/celtic/3.png)
 Celtic
 
 ### Create Your Own Style
 
-1. To add your own style, create a GIF for each of the digits, `0.gif` through `9.gif`. Save the images in a folder named after your new style in `public/images/digits`.
+1. To add your own style, create a GIF for each of the digits, `0.png` through `9.png`. Save the images in a folder named after your new style in `public/images/digits`.
 
 2. In your controller, declare a new `STYLES` constant and add the folder name to it:
 
