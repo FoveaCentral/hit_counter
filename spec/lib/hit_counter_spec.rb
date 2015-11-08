@@ -82,25 +82,17 @@ describe HitCounter do
     context 'when outside range' do
       context 'with negative' do
         context 'returns 2 for' do
-          it -1 do
-            expect(HitCounter.normalize_style_number('-1')).to eq 2
-          end
+          it(-1) { expect(HitCounter.normalize_style_number('-1')).to eq 2 }
 
-          it -31 do
-            expect(HitCounter.normalize_style_number('-31')).to eq 2
-          end
+          it(-31) { expect(HitCounter.normalize_style_number('-31')).to eq 2 }
         end
       end
 
       context 'with positive' do
         context 'returns 0 for' do
-          it 4 do
-            expect(HitCounter.normalize_style_number('4')).to eq 0
-          end
+          it(4) { expect(HitCounter.normalize_style_number('4')).to eq 0 }
 
-          it 34 do
-            expect(HitCounter.normalize_style_number('34')).to eq 0
-          end
+          it(34) { expect(HitCounter.normalize_style_number('34')).to eq 0 }
         end
       end
     end
@@ -112,7 +104,10 @@ describe HitCounter do
     end
 
     context 'with "http://www.nytimes.com"' do
-      it { expect(HitCounter.normalize_url('http://www.nytimes.com')).to eq 'http://www.nytimes.com' }
+      it do
+        expect(HitCounter.normalize_url('http://www.nytimes.com'))
+          .to eq 'http://www.nytimes.com'
+      end
     end
   end
 end

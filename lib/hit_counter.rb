@@ -16,50 +16,50 @@ require 'rubygems'
 require 'bundler/setup'
 Bundler.require :default
 
+# Ruby version of that old 90s chestnut, <BLINK>the web-site hit counter</BLINK>
 class HitCounter
   include Mongoid::Document
   include Mongoid::Timestamps
 
-  # Mongo Config ===================================================================================
+  # Mongo Config ===============================================================
   field :url
-  field :hits, :type => Integer, :default => 0
+  field :hits, type: Integer, default: 0
 
   # Validates the <code>HitCounter</code>'s URL.
   #
-  # If the URI library can parse the value and the scheme is valid, then we assume the url is valid.
+  # If the URI library can parse the value and the scheme is valid, then we
+  # assume the url is valid.
   class UrlValidator < ActiveModel::EachValidator
-    def validate_each record, attribute, value
-      begin
-        uri = Addressable::URI.parse value
-
-        if !['http', 'https'].include? uri.scheme
-          raise Addressable::URI::InvalidURIError
-        end
-      rescue Addressable::URI::InvalidURIError
-        record.errors[attribute] << 'Invalid URL'
-      end
+    def validate_each(record, attribute, value)
+      uri = Addressable::URI.parse value
+      fail Addressable::URI::InvalidURIError unless %w(http https).include?(
+        uri.scheme
+      )
+    rescue Addressable::URI::InvalidURIError
+      record.errors[attribute] << 'Invalid URL'
     end
   end
 
-  validates :url, :presence => true, :url => true, :uniqueness => true
+  validates :url, presence: true, url: true, uniqueness: true
 
-  # Class methods ==================================================================================
+  # Class methods ==============================================================
 
-  # Returns a <code>HitCounter</code> matching the specified URL. The HitCounter is created if no
-  # matching one is found. In the latter case, the hits argument specifies the starting count.
+  # Returns a <code>HitCounter</code> matching the specified URL. The HitCounter
+  # is created if no matching one is found. In the latter case, the hits
+  # argument specifies the starting count.
   #
   # * *Args*
   #   - +url+ -> the URL for the site being counted
   #   - +hits+ -> the number of hits to start with
   # * *Returns*
   #   - the site's HitCounter
-  def self.get url, hits = 0
-    args = {:url => HitCounter.normalize_url(url)}
-    args[:hits] = hits unless HitCounter.where(:conditions => args).exists?
-    self.find_or_create_by args
+  def self.get(url, hits = 0)
+    args = { url: HitCounter.normalize_url(url) }
+    args[:hits] = hits unless HitCounter.where(conditions: args).exists?
+    find_or_create_by args
   end
 
-  # Instance methods: Overrides ====================================================================
+  # Instance methods: Overrides ================================================
 
   # Sets the number of hits.
   #
@@ -67,7 +67,7 @@ class HitCounter
   #   - +value+ -> the number of hits
   # * *Returns*
   #   - the value
-  def hits= value
+  def hits=(value)
     self[:hits] = value.to_i
   end
 
@@ -77,11 +77,11 @@ class HitCounter
   #   - +value+ -> the URL for the site being counted
   # * *Returns*
   #   - the value
-  def url= value
+  def url=(value)
     self[:url] = HitCounter.normalize_url value
   end
 
-  # Instance methods ===============================================================================
+  # Instance methods ===========================================================
 
   # Returns the hit count as a PNG image, using the specified style:
   #   1 odometer
@@ -92,8 +92,9 @@ class HitCounter
   #   - +style_number+ -> the image style
   # * *Returns*
   #   - the current hit count as a PNG image
-  def image style_number
-    image = HitCounter.cat_image self.hits.to_s, HitCounter.normalize_style_number(style_number)
+  def image(style_number)
+    image = HitCounter.cat_image hits.to_s,
+                                 HitCounter.normalize_style_number(style_number)
     image.format = 'png'
     image
   end
@@ -104,19 +105,21 @@ class HitCounter
   #   - true if the save was successful
   def increment
     self.hits += 1
-    self.save
+    save
   end
 
-  private
+  STYLES = %w(odometer scout celtic)
 
-  STYLES = ['odometer', 'scout', 'celtic']
-
-  def self.cat_image number, style_index, images = Magick::ImageList.new
+  def self.cat_image(number, style_index, images = Magick::ImageList.new)
     return images.append(false) if number.blank?
-    HitCounter.cat_image number[1..-1], style_index, images << Magick::Image.read("#{Rails.root}/public/images/digits/#{STYLES[style_index]}/#{number[0..0]}.gif").first
+    HitCounter.cat_image number[1..-1], style_index, images << Magick::Image
+      .read(
+        "#{Rails.root}/public/images/digits/#{STYLES[style_index]}/"\
+        "#{number[0..0]}.gif"
+      ).first
   end
 
-  def self.normalize_style_number value
+  def self.normalize_style_number(value)
     value = value.to_i
     value -= 1 if value > 0
 
@@ -127,20 +130,23 @@ class HitCounter
     end
   end
 
-  def self.normalize_url value
+  def self.normalize_url(value)
     value !~ %r{^http://} ? "http://#{value}" : value
   end
 end
 
 if defined? Rails
+  # Overriding Rails to include install task
   class Railtie < Rails::Railtie
     rake_tasks do
       namespace :hit_counter do
         desc 'Install HitCounter into your app.'
         task :install do
           puts 'Installing required image files...'
-          system "rsync -ruv #{Gem.searcher.find('hit_counter').full_gem_path}/config ."
-          system "rsync -ruv #{Gem.searcher.find('hit_counter').full_gem_path}/public ."
+          system "rsync -ruv #{Gem.searcher.find('hit_counter').full_gem_path}"\
+            '/config .'
+          system "rsync -ruv #{Gem.searcher.find('hit_counter').full_gem_path}"\
+            '/public .'
         end
       end
     end
