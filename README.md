@@ -65,13 +65,13 @@ You can use one of the three included styles by specifying a different `style` p
 
 The included styles are:
 
-![image of 1 in odometer style](http://github.com/ivanoblomov/hit_counter/raw/master/public/images/digits/odometer/1.png)
+![image of 1 in odometer style](/public/images/digits/odometer/1.png)
 Odometer
 
-![image of 2 in scout style](http://github.com/ivanoblomov/hit_counter/raw/master/public/images/digits/scout/2.png)
+![image of 2 in scout style](/public/images/digits/scout/2.png)
 Scout
 
-![image of 3 in celtic style](http://github.com/ivanoblomov/hit_counter/raw/master/public/images/digits/celtic/3.png)
+![image of 3 in celtic style](/public/images/digits/celtic/3.png)
 Celtic
 
 ### Create Your Own Style
