@@ -1,5 +1,11 @@
+require 'codeclimate-test-reporter'
+CodeClimate::TestReporter.start
 require 'coveralls'
 Coveralls.wear!
+SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter[
+  CodeClimate::TestReporter::Formatter,
+  Coveralls::SimpleCov::Formatter
+]
 $LOAD_PATH.unshift(File.join(File.dirname(__FILE__), '..', 'lib'))
 $LOAD_PATH.unshift(File.dirname(__FILE__))
 require 'addressable/uri'
