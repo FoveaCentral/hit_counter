@@ -16,7 +16,7 @@ require 'rspec'
 require 'hit_counter'
 
 Mongoid.load! 'config/mongoid.yml', :test
-Mongoid.logger = false
+Mongo::Logger.logger.level = ::Logger::WARN
 
 # Stub Rails root during tests.
 module Rails
