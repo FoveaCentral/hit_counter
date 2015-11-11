@@ -59,8 +59,8 @@ class HitCounter
   #   hc = HitCounter.get 'cnn.com'
   #   hc = HitCounter.get 'cnn.com', 100
   def self.get(url, hits = 0)
-    args = { url: HitCounter.normalize_url(url) }
-    args[:hits] = hits unless HitCounter.where(conditions: args).exists?
+    args = { url: normalize_url(url) }
+    args[:hits] = hits unless where(conditions: args).exists?
     find_or_create_by args
   end
 
@@ -114,13 +114,11 @@ class HitCounter
     save
   end
 
-  private
-
   STYLES = %w(odometer scout celtic)
 
   def self.cat_image(number, style_index, images = Magick::ImageList.new)
     return images.append(false) if number.blank?
-    HitCounter.cat_image number[1..-1], style_index, images << Magick::Image
+    cat_image number[1..-1], style_index, images << Magick::Image
       .read(
         "#{Rails.root}/public/images/digits/#{STYLES[style_index]}/"\
         "#{number[0..0]}.png"
