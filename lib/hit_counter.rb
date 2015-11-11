@@ -17,6 +17,10 @@ require 'bundler/setup'
 Bundler.require :default
 
 # Ruby version of that old 90s chestnut, <BLINK>the web-site hit counter</BLINK>
+#
+# @example
+#   hc = HitCounter.get 'cnn.com'
+#   hc.increment
 class HitCounter
   include Mongoid::Document
   include Mongoid::Timestamps
@@ -48,11 +52,12 @@ class HitCounter
   # is created if no matching one is found. In the latter case, the hits
   # argument specifies the starting count.
   #
-  # * *Args*
-  #   - +url+ -> the URL for the site being counted
-  #   - +hits+ -> the number of hits to start with
-  # * *Returns*
-  #   - the site's HitCounter
+  # @param url [String] the URL for the site being counted
+  # @param hits [Integer] the number of hits to start with
+  # @return [HitCounter] the site's HitCounter
+  # @example
+  #   hc = HitCounter.get 'cnn.com'
+  #   hc = HitCounter.get 'cnn.com', 100
   def self.get(url, hits = 0)
     args = { url: HitCounter.normalize_url(url) }
     args[:hits] = hits unless HitCounter.where(conditions: args).exists?
@@ -63,20 +68,20 @@ class HitCounter
 
   # Sets the number of hits.
   #
-  # * *Args*
-  #   - +value+ -> the number of hits
-  # * *Returns*
-  #   - the value
+  # @param value [Integer] the initial number of hits
+  # @return [Integer] the number of hits
+  # @example
+  #   hc.hits = 100
   def hits=(value)
     self[:hits] = value.to_i
   end
 
   # Sets the URL to be tracked. The http prefix is optional.
   #
-  # * *Args*
-  #   - +value+ -> the URL for the site being counted
-  # * *Returns*
-  #   - the value
+  # @param value [String] the URL for the site being counted
+  # @return [String] the normalized URL
+  # @example
+  #   hc.url = 'cnn.com'
   def url=(value)
     self[:url] = HitCounter.normalize_url value
   end
@@ -88,10 +93,10 @@ class HitCounter
   #   2 scout
   #   3 Celtic
   #
-  # * *Args*
-  #   - +style_number+ -> the image style
-  # * *Returns*
-  #   - the current hit count as a PNG image
+  # @param style_number [String] the image style
+  # @return [Magick::Image] the current hit count as a PNG image
+  # @example
+  #   hc.image = 1
   def image(style_number)
     image = HitCounter.cat_image hits.to_s,
                                  HitCounter.normalize_style_number(style_number)
@@ -101,12 +106,15 @@ class HitCounter
 
   # Increments the hit count and saves the HitCounter.
   #
-  # * *Returns*
-  #   - true if the save was successful
+  # @return [true] if the save was successful
+  # @example
+  #   hc.increment
   def increment
     self.hits += 1
     save
   end
+
+  private
 
   STYLES = %w(odometer scout celtic)
 
