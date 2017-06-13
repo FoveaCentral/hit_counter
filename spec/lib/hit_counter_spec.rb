@@ -1,5 +1,5 @@
 require File.dirname(__FILE__) + '/../spec_helper'
-
+# rubocop:disable Metrics/BlockLength
 describe HitCounter do
   before(:all) { described_class.delete_all }
 
@@ -19,7 +19,6 @@ describe HitCounter do
         end
       end
     end
-
     context 'with new URL' do
       before { described_class.get 'www.cnn.com' }
 
@@ -34,7 +33,6 @@ describe HitCounter do
           end
         end
       end
-
       context 'with starting count 10' do
         describe '#hits' do
           it { expect(described_class.get('online.wsj.com', 10).hits).to eq 10 }
@@ -42,7 +40,6 @@ describe HitCounter do
       end
     end
   end
-
   describe '#hits' do
     it { expect(subject.hits).to eq 0 }
 
@@ -52,20 +49,16 @@ describe HitCounter do
       it { expect(subject.hits).to eq 1 }
     end
   end
-
   describe '#image' do
     it { expect(subject.image('1')).to be_a Magick::Image }
   end
-
   describe '#normalize_style_number' do
     context 'with nil' do
       it { expect(described_class.normalize_style_number(nil)).to be_zero }
     end
-
     context 'with empty string' do
       it { expect(described_class.normalize_style_number('')).to be_zero }
     end
-
     context 'with number in range' do
       {
         '1' => 0,
@@ -78,7 +71,6 @@ describe HitCounter do
         end
       end
     end
-
     context 'with number outside range' do
       {
         '-31' => 2,
@@ -94,16 +86,13 @@ describe HitCounter do
       end
     end
   end
-
   describe '#normalize_url' do
     {
       'cnn.com' => 'http://cnn.com',
       'http://www.nytimes.com' => 'http://www.nytimes.com'
     }.each do |input, output|
       context "with '#{input}'" do
-        it do
-          expect(described_class.normalize_url(input)).to eq output
-        end
+        it { expect(described_class.normalize_url(input)).to eq output }
       end
     end
   end

@@ -118,22 +118,17 @@ class HitCounter
 
   def self.cat_image(number, style_index, images = Magick::ImageList.new)
     return images.append(false) if number.blank?
-    cat_image number[1..-1], style_index, images << Magick::Image
-                                                    .read(
-                                                      "#{Rails.root}/public/images/digits/#{STYLES[style_index]}/"\
-                                                      "#{number[0..0]}.png"
-                                                    ).first
+    cat_image(number[1..-1], style_index, images <<
+      Magick::Image.read("#{Rails.root}/public/images/digits/"\
+                         "#{STYLES[style_index]}/#{number[0..0]}.png").first)
   end
 
   def self.normalize_style_number(value)
     value = value.to_i
     value -= 1 if value > 0
 
-    if value >= 0 && value < STYLES.size
-      return value
-    else
-      value % 3
-    end
+    return value if value >= 0 && value < STYLES.size
+    value % 3
   end
 
   def self.normalize_url(value)
