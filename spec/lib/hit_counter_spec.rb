@@ -54,16 +54,16 @@ describe HitCounter do
   end
 
   describe '#image' do
-    it { expect(subject.image '1').to be_a Magick::Image }
+    it { expect(subject.image('1')).to be_a Magick::Image }
   end
 
   describe '#normalize_style_number' do
     context 'with nil' do
-      it { expect(described_class.normalize_style_number nil).to be_zero }
+      it { expect(described_class.normalize_style_number(nil)).to be_zero }
     end
 
     context 'with empty string' do
-      it { expect(described_class.normalize_style_number '').to be_zero }
+      it { expect(described_class.normalize_style_number('')).to be_zero }
     end
 
     context 'with number in range' do
@@ -73,7 +73,7 @@ describe HitCounter do
       }.each do |input, output|
         context "with '#{input}'" do
           it do
-            expect(described_class.normalize_style_number input).to eq output
+            expect(described_class.normalize_style_number(input)).to eq output
           end
         end
       end
@@ -88,7 +88,7 @@ describe HitCounter do
       }.each do |input, output|
         context "with '#{input}'" do
           it do
-            expect(described_class.normalize_style_number input).to eq output
+            expect(described_class.normalize_style_number(input)).to eq output
           end
         end
       end
@@ -102,7 +102,7 @@ describe HitCounter do
     }.each do |input, output|
       context "with '#{input}'" do
         it do
-          expect(described_class.normalize_url input).to eq output
+          expect(described_class.normalize_url(input)).to eq output
         end
       end
     end

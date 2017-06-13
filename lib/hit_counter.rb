@@ -36,7 +36,7 @@ class HitCounter
   class UrlValidator < ActiveModel::EachValidator
     def validate_each(record, attribute, value)
       uri = Addressable::URI.parse value
-      fail Addressable::URI::InvalidURIError unless %w(http https).include?(
+      raise Addressable::URI::InvalidURIError unless %w[http https].include?(
         uri.scheme
       )
     rescue Addressable::URI::InvalidURIError
@@ -114,15 +114,15 @@ class HitCounter
     save
   end
 
-  STYLES = %w(odometer scout celtic)
+  STYLES = %w[odometer scout celtic].freeze
 
   def self.cat_image(number, style_index, images = Magick::ImageList.new)
     return images.append(false) if number.blank?
     cat_image number[1..-1], style_index, images << Magick::Image
-      .read(
-        "#{Rails.root}/public/images/digits/#{STYLES[style_index]}/"\
-        "#{number[0..0]}.png"
-      ).first
+                                                    .read(
+                                                      "#{Rails.root}/public/images/digits/#{STYLES[style_index]}/"\
+                                                      "#{number[0..0]}.png"
+                                                    ).first
   end
 
   def self.normalize_style_number(value)
