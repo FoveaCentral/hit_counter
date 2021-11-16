@@ -8,7 +8,7 @@ What problem does this pull request solve? This should be close to the goal of t
     1. This will help code reviewers get oriented quickly.
     2. It will also document for future maintainers exactly what changed (and why) when this PR was merged.
 2. **Add specs** that either *reproduce the bug* or *cover the new feature*. In the former's case, *make sure it fails without the fix!*
-3. Document any new public methods using standard RDoc syntax, or update the existing RDoc for any modified public methods. As an example, see the RDoc for `GoogleMapsGeocoder.new`:
+3. Document any new public methods using standard RDoc syntax, or update the existing RDoc for any modified public methods. As an example, see the RDoc for `HitCounter.get`:
 
 ```ruby
   # Returns a <code>HitCounter</code> matching the specified URL. The HitCounter
