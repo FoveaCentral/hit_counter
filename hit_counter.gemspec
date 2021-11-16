@@ -16,6 +16,8 @@ Gem::Specification.new do |s|
   s.add_development_dependency 'rake', '>= 12.3.3', '~> 13.0'
   s.add_development_dependency 'rspec', '~> 3'
   s.add_development_dependency 'rubocop', '< 1.24'
+  s.add_development_dependency 'rubocop-rake', '~> 0'
+  s.add_development_dependency 'rubocop-rspec', '~> 2'
 
   s.add_runtime_dependency 'addressable', '~> 2'
   s.add_runtime_dependency 'bson_ext', '~> 1'
@@ -27,4 +29,5 @@ Gem::Specification.new do |s|
   s.executables   = `git ls-files -- bin/*`.split("\n")
                                            .map { |f| File.basename f }
   s.require_paths = ['lib']
+  s.required_ruby_version = '>= 2.5'
 end
