@@ -12,7 +12,6 @@ Gem::Specification.new do |s|
   s.homepage = 'https://github.com/ivanoblomov/hit_counter'
   s.authors = ['Roderick Monje']
 
-  s.add_development_dependency 'coveralls', '~> 0'
   s.add_development_dependency 'rake', '>= 12.3.3', '~> 13.0'
   s.add_development_dependency 'rspec', '~> 3'
   s.add_development_dependency 'rubocop', '< 1.24'
