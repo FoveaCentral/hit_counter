@@ -61,19 +61,17 @@ Ruby version of that old 90s chestnut, `<BLINK>`the web-site hit counter`</BLINK
 
 ### Use an Existing Style
 
-You can use one of the three included styles by specifying a different `style` param in the HTML:
-
-```html
-  <img alt="Hit Counter" border="0" src="/hit-counter?url=cnn.com&style=1" />
-```
-
-The included styles are:
-
 | Name     | Image                                                                 |
 | -------- | --------------------------------------------------------------------- |
 | Celtic   | ![image of 3 in celtic style](/public/images/digits/celtic/3.png)     |
 | Odometer | ![image of 1 in odometer style](/public/images/digits/odometer/1.png) |
 | Scout    | ![image of 2 in scout style](/public/images/digits/scout/2.png)       |
+
+You can use one of the three included styles by specifying a different `style` param in the HTML:
+
+```html
+  <img alt="Hit Counter" border="0" src="/hit-counter?url=cnn.com&style=1" />
+```
 
 ### Create Your Own Style
 
