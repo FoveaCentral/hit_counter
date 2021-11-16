@@ -19,7 +19,7 @@ Ruby version of that old 90s chestnut, `<BLINK>`the web-site hit counter`</BLINK
 
     Run:
 
-    ```bash
+    ```sh
       bundle
       rake hit_counter:install
     ```
@@ -69,14 +69,11 @@ You can use one of the three included styles by specifying a different `style` p
 
 The included styles are:
 
-![image of 1 in odometer style](/public/images/digits/odometer/1.png)
-Odometer
-
-![image of 2 in scout style](/public/images/digits/scout/2.png)
-Scout
-
-![image of 3 in celtic style](/public/images/digits/celtic/3.png)
-Celtic
+| Name     | Image                                                                 |
+| -------- | --------------------------------------------------------------------- |
+| Celtic   | ![image of 3 in celtic style](/public/images/digits/celtic/3.png)     |
+| Odometer | ![image of 1 in odometer style](/public/images/digits/odometer/1.png) |
+| Scout    | ![image of 2 in scout style](/public/images/digits/scout/2.png)       |
 
 ### Create Your Own Style
 
