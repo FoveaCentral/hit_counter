@@ -7,7 +7,7 @@ Gem::Specification.new do |s|
     'thousands and thousands of Internet vets are still using the one we '\
     "wrote in PHP eons ago and we don't want to be squandering any incidental "\
     "Google juice, that's why."
-  s.homepage = 'http://github.com/ivanoblomov/hit_counter'
+  s.homepage = 'https://github.com/ivanoblomov/hit_counter'
   s.authors = ['Roderick Monje']
 
   s.add_development_dependency 'coveralls', '>= 0'
