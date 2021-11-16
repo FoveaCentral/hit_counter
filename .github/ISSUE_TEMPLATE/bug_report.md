@@ -1,38 +1,23 @@
 ---
 name: Bug report
 about: Create a report to help us improve
-title: ''
-labels: ''
-assignees: ''
-
+labels: 'bug'
 ---
 
-**Describe the bug**
-A clear and concise description of what the bug is.
+# Description
 
-**To Reproduce**
-Steps to reproduce the behavior:
-1. Go to '...'
-2. Click on '....'
-3. Scroll down to '....'
-4. See error
+Provide as much background as you need to get the implementer up to speed on the problem to be solved. This can also include screenshots and links to other issues or pull requests.
 
-**Expected behavior**
-A clear and concise description of what you expected to happen.
+# Steps to Reproduce
 
-**Screenshots**
-If applicable, add screenshots to help explain your problem.
+Don't forget to point out the difference between what *should* happen and what *does* happen. Here's an example:
 
-**Desktop (please complete the following information):**
- - OS: [e.g. iOS]
- - Browser [e.g. chrome, safari]
- - Version [e.g. 22]
-
-**Smartphone (please complete the following information):**
- - Device: [e.g. iPhone6]
- - OS: [e.g. iOS8.1]
- - Browser [e.g. stock browser, safari]
- - Version [e.g. 22]
-
-**Additional context**
-Add any other context about the problem here.
+1. Try geocoding "1600 Pennsylvania Ave":
+    ```ruby
+    white_house = GoogleMapsGeocoder.new('1600 Pennsylvania Ave')
+    ```
+2. The formatted address doesn't match the White House:
+   ```ruby
+   white_house.formatted_address
+   => "1600 Pennsylvania Ave, Charleston, WV 25302, USA"
+   ```
