@@ -12,12 +12,12 @@ Provide as much background as you need to get the implementer up to speed on the
 
 Don't forget to point out the difference between what *should* happen and what *does* happen. Here's an example:
 
-1. Try geocoding "1600 Pennsylvania Ave":
+1. Try getting the count on cnn.com:
     ```ruby
-    white_house = GoogleMapsGeocoder.new('1600 Pennsylvania Ave')
+    HitCounter.get 'cnn.com'
     ```
-2. The formatted address doesn't match the White House:
+2. The returned count is nil:
    ```ruby
-   white_house.formatted_address
-   => "1600 Pennsylvania Ave, Charleston, WV 25302, USA"
+   HitCounter.get 'cnn.com'
+   => nil
    ```

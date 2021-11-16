@@ -107,4 +107,4 @@ Celtic
 
 ## Copyright
 
-Copyright (c) 2011 Roderick Monje. See LICENSE.txt for further details.
+Copyright © 2011-2021 Roderick Monje. See LICENSE.txt for further details.
