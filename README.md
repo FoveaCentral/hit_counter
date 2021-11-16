@@ -3,7 +3,6 @@
 ![Build status](https://github.com/ivanoblomov/hit_counter/workflows/test/badge.svg)
 [![Code Climate](https://codeclimate.com/github/ivanoblomov/hit_counter.png)](https://codeclimate.com/github/ivanoblomov/hit_counter)
 [![Coveralls](https://coveralls.io/repos/ivanoblomov/hit_counter/badge.svg?branch=master&service=github)](https://coveralls.io/github/ivanoblomov/hit_counter?branch=master)
-[![Dependency Status](https://gemnasium.com/ivanoblomov/hit_counter.png)](https://gemnasium.com/ivanoblomov/hit_counter)
 [![Inch CI](https://inch-ci.org/github/ivanoblomov/hit_counter.svg?branch=master&amp;style=flat)](https://inch-ci.org/github/ivanoblomov/hit_counter)
 [![Gem Version](https://badge.fury.io/rb/hit_counter.svg)](https://badge.fury.io/rb/hit_counter)
 
@@ -20,7 +19,7 @@ Ruby version of that old 90s chestnut, `<BLINK>`the web-site hit counter`</BLINK
 
     Run:
 
-    ```bash
+    ```sh
       bundle
       rake hit_counter:install
     ```
@@ -62,22 +61,17 @@ Ruby version of that old 90s chestnut, `<BLINK>`the web-site hit counter`</BLINK
 
 ### Use an Existing Style
 
+| Name     | Image                                                                 |
+| -------- | --------------------------------------------------------------------- |
+| Celtic   | ![image of 3 in celtic style](/public/images/digits/celtic/3.png)     |
+| Odometer | ![image of 1 in odometer style](/public/images/digits/odometer/1.png) |
+| Scout    | ![image of 2 in scout style](/public/images/digits/scout/2.png)       |
+
 You can use one of the three included styles by specifying a different `style` param in the HTML:
 
 ```html
   <img alt="Hit Counter" border="0" src="/hit-counter?url=cnn.com&style=1" />
 ```
-
-The included styles are:
-
-![image of 1 in odometer style](/public/images/digits/odometer/1.png)
-Odometer
-
-![image of 2 in scout style](/public/images/digits/scout/2.png)
-Scout
-
-![image of 3 in celtic style](/public/images/digits/celtic/3.png)
-Celtic
 
 ### Create Your Own Style
 
@@ -95,15 +89,15 @@ Celtic
       <img alt="Hit Counter" border="0" src="/hit-counter?url=cnn.com&style=4" />
     ```
 
-## Contributing to hit_counter
+## Documentation
 
-* Check out the latest master to make sure the feature hasn't been implemented or the bug hasn't been fixed yet
-* Check out the issue tracker to make sure someone already hasn't requested it and/or contributed it
-* Fork the project
-* Start a feature/bugfix branch
-* Commit and push until you are happy with your contribution
-* Make sure to add tests for it. This is important so I don't break it in a future version unintentionally.
-* Please try not to mess with the Rakefile, version, or history. If you want to have your own version, or is otherwise necessary, that is fine, but please isolate to its own commit so I can cherry-pick around it.
+Complete RDoc documentation is available at [RubyDoc.info](https://www.rubydoc.info/gems/hit_counter).
+
+## [Contributing to HitCounter](CONTRIBUTING.md)
+
+## Cheers!
+
+<a href="https://www.buymeacoffee.com/oblomov" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/v2/default-green.png" alt="Buy Me A Coffee" height="41" width="174" ></a>
 
 ## Copyright
 
