@@ -1,6 +1,6 @@
 # HitCounter
 
-[![Travis CI](https://secure.travis-ci.org/ivanoblomov/hit_counter.png)](https://travis-ci.org/ivanoblomov/hit_counter)
+![Build status](https://github.com/ivanoblomov/hit_counter/workflows/test/badge.svg)
 [![Code Climate](https://codeclimate.com/github/ivanoblomov/hit_counter.png)](https://codeclimate.com/github/ivanoblomov/hit_counter)
 [![Coveralls](https://coveralls.io/repos/ivanoblomov/hit_counter/badge.svg?branch=master&service=github)](https://coveralls.io/github/ivanoblomov/hit_counter?branch=master)
 [![Dependency Status](https://gemnasium.com/ivanoblomov/hit_counter.png)](https://gemnasium.com/ivanoblomov/hit_counter)
