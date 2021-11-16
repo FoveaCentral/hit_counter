@@ -1,4 +1,6 @@
-require File.dirname(__FILE__) + '/../spec_helper'
+# frozen_string_literal: true
+
+require "#{File.dirname(__FILE__)}/../spec_helper"
 # rubocop:disable Metrics/BlockLength
 describe HitCounter do
   before(:all) { described_class.delete_all }
@@ -97,3 +99,4 @@ describe HitCounter do
     end
   end
 end
+# rubocop:enable Metrics/BlockLength

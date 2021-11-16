@@ -1,4 +1,6 @@
-require File.expand_path '../lib/version', __FILE__
+# frozen_string_literal: true
+
+require File.expand_path 'lib/version', __dir__
 Gem::Specification.new do |s|
   s.name = 'hit_counter'
   s.version = HitCounter::VERSION.dup
@@ -7,16 +9,18 @@ Gem::Specification.new do |s|
     'thousands and thousands of Internet vets are still using the one we '\
     "wrote in PHP eons ago and we don't want to be squandering any incidental "\
     "Google juice, that's why."
-  s.homepage = 'http://github.com/ivanoblomov/hit_counter'
+  s.homepage = 'https://github.com/ivanoblomov/hit_counter'
   s.authors = ['Roderick Monje']
 
-  s.add_development_dependency 'coveralls', '>= 0'
-  s.add_development_dependency 'rake', '>= 0'
-  s.add_development_dependency 'rspec', '>= 0'
-  s.add_development_dependency 'rubocop', '>= 0'
+  s.add_development_dependency 'coveralls', '~> 0'
+  s.add_development_dependency 'rake', '>= 12.3.3', '~> 13.0'
+  s.add_development_dependency 'rspec', '~> 3'
+  s.add_development_dependency 'rubocop', '< 1.24'
+  s.add_development_dependency 'rubocop-rake', '~> 0'
+  s.add_development_dependency 'rubocop-rspec', '~> 2'
 
-  s.add_runtime_dependency 'addressable', '>= 0'
-  s.add_runtime_dependency 'bson_ext', '>= 0'
+  s.add_runtime_dependency 'addressable', '~> 2'
+  s.add_runtime_dependency 'bson_ext', '~> 1'
   s.add_runtime_dependency 'mongoid', '~> 6'
   s.add_runtime_dependency 'rmagick', '~> 2'
 
@@ -25,4 +29,5 @@ Gem::Specification.new do |s|
   s.executables   = `git ls-files -- bin/*`.split("\n")
                                            .map { |f| File.basename f }
   s.require_paths = ['lib']
+  s.required_ruby_version = '>= 2.5'
 end

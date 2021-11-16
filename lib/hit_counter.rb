@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # Copyright (c) 2011 Roderick Monje
 #
 # This program is free software: you can redistribute it and/or modify
@@ -118,6 +120,7 @@ class HitCounter
 
   def self.cat_image(number, style_index, images = Magick::ImageList.new)
     return images.append(false) if number.blank?
+
     cat_image(number[1..-1], style_index, images <<
       Magick::Image.read("#{Rails.root}/public/images/digits/"\
                          "#{STYLES[style_index]}/#{number[0..0]}.png").first)
@@ -125,9 +128,10 @@ class HitCounter
 
   def self.normalize_style_number(value)
     value = value.to_i
-    value -= 1 if value > 0
+    value -= 1 if value.positive?
 
     return value if value >= 0 && value < STYLES.size
+
     value % 3
   end
 

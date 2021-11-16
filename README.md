@@ -1,11 +1,11 @@
 # HitCounter
 
-[![Travis CI](https://secure.travis-ci.org/ivanoblomov/hit_counter.png)](http://travis-ci.org/ivanoblomov/hit_counter)
+[![Travis CI](https://secure.travis-ci.org/ivanoblomov/hit_counter.png)](https://travis-ci.org/ivanoblomov/hit_counter)
 [![Code Climate](https://codeclimate.com/github/ivanoblomov/hit_counter.png)](https://codeclimate.com/github/ivanoblomov/hit_counter)
 [![Coveralls](https://coveralls.io/repos/ivanoblomov/hit_counter/badge.svg?branch=master&service=github)](https://coveralls.io/github/ivanoblomov/hit_counter?branch=master)
 [![Dependency Status](https://gemnasium.com/ivanoblomov/hit_counter.png)](https://gemnasium.com/ivanoblomov/hit_counter)
 [![Inch CI](https://inch-ci.org/github/ivanoblomov/hit_counter.svg?branch=master&amp;style=flat)](https://inch-ci.org/github/ivanoblomov/hit_counter)
-[![Gem Version](https://badge.fury.io/rb/hit_counter.svg)](http://badge.fury.io/rb/hit_counter)
+[![Gem Version](https://badge.fury.io/rb/hit_counter.svg)](https://badge.fury.io/rb/hit_counter)
 
 Ruby version of that old 90s chestnut, `<BLINK>`the web-site hit counter`</BLINK>`.
 
@@ -55,7 +55,7 @@ Ruby version of that old 90s chestnut, `<BLINK>`the web-site hit counter`</BLINK
 3. Add the hit-counter image tag to your site's HTML:
 
     ```html
-      <img alt="Hit Counter" border="0" src="/hit-counter?url=http://cnn.com&style=1" />
+      <img alt="Hit Counter" border="0" src="/hit-counter?url=https://cnn.com&style=1" />
     ````
 
 ## Customizing the Hit-Counter Image
