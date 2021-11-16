@@ -21,6 +21,10 @@ jobs:
       with:
         ruby-version: ${{ matrix.ruby-version }}
         bundler-cache: true # 'bundle install' and cache
+    - name: Start MongoDB
+      uses: supercharge/mongodb-github-action@1.7.0
+      with:
+        mongodb-version: '4.4'
     - name: Run tests
       run: bundle exec rake
     - name: Coveralls
