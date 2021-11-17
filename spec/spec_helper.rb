@@ -23,6 +23,7 @@ end
 require 'rake'
 
 # load rake tasks
+# https://dev.to/cassidycodes/how-to-test-rake-tasks-with-rspec-without-rails-3mhb
 module TaskFormat
   extend ActiveSupport::Concern
   included do
