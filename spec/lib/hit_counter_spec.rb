@@ -73,7 +73,14 @@ describe HitCounter do
     end
   end
   describe '#image' do
-    it { expect(subject.image('1')).to be_a Magick::Image }
+    context 'with a valid :style_number' do
+      it { expect(subject.image('1').filename).to eq "./public/images/digits/odometer/#{subject.hits}.png" }
+    end
+    context 'with JavaScript' do
+      it {
+        expect(subject.image(JAVASCRIPT_HACK).filename).to eq "./public/images/digits/odometer/#{subject.hits}.png"
+      }
+    end
   end
   describe '#url=' do
     context 'with JavaScript' do
