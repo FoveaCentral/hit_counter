@@ -16,8 +16,8 @@ class HitCounter
   include Mongoid::Timestamps
 
   # Mongo Config ===============================================================
-  field :url
   field :hits, type: Integer, default: 0
+  field :url
 
   # Validates the <code>HitCounter</code>'s URL.
   #
@@ -30,10 +30,11 @@ class HitCounter
         uri.scheme
       )
     rescue Addressable::URI::InvalidURIError
-      record.errors[attribute] << 'Invalid URL'
+      record.errors.add attribute, 'Invalid URL'
     end
   end
 
+  validates :hits, numericality: { only_integer: true }
   validates :url, presence: true, url: true, uniqueness: true
 
   # Class methods ==============================================================
@@ -73,7 +74,7 @@ class HitCounter
   # @example
   #   hc.url = 'cnn.com'
   def url=(value)
-    self[:url] = HitCounter.normalize_url value
+    self[:url] = HitCounter.send(:normalize_url, value)
   end
 
   # Instance methods ===========================================================
@@ -88,8 +89,7 @@ class HitCounter
   # @example
   #   hc.image = 1
   def image(style_number)
-    image = HitCounter.cat_image hits.to_s,
-                                 HitCounter.normalize_style_number(style_number)
+    image = HitCounter.send(:cat_image, hits.to_s, HitCounter.send(:normalize_style_number, style_number))
     image.format = 'png'
     image
   end
@@ -106,7 +106,7 @@ class HitCounter
 
   STYLES = %w[odometer scout celtic].freeze
 
-  def self.cat_image(number, style_index, images = Magick::ImageList.new)
+  private_class_method def self.cat_image(number, style_index, images = Magick::ImageList.new)
     return images.append(false) if number.blank?
 
     cat_image(number[1..-1], style_index, images <<
@@ -114,7 +114,7 @@ class HitCounter
                          "#{STYLES[style_index]}/#{number[0..0]}.png").first)
   end
 
-  def self.normalize_style_number(value)
+  private_class_method def self.normalize_style_number(value)
     value = value.to_i
     value -= 1 if value.positive?
 
@@ -123,7 +123,7 @@ class HitCounter
     value % 3
   end
 
-  def self.normalize_url(value)
+  private_class_method def self.normalize_url(value)
     value !~ %r{^http://} ? "http://#{value}" : value
   end
 end

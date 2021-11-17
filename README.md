@@ -25,6 +25,15 @@ Ruby version of that old 90s chestnut, `<BLINK>`the web-site hit counter`</BLINK
       rake hit_counter:install
     ```
 
+    ### Security note
+
+    `HitCounter` is cryptographically signed. To insure the gem you install hasn’t been tampered with, add my public key as a trusted certificate and then install:
+
+    ```sh
+    gem cert --add <(curl -Ls https://raw.github.com/ivanoblomov/hit_counter/master/certs/ivanoblomov.pem)
+    gem install hit_counter -P HighSecurity
+    ```
+
 2. Add a controller action to your app.
 
     `application_controller.rb`
@@ -51,6 +60,13 @@ Ruby version of that old 90s chestnut, `<BLINK>`the web-site hit counter`</BLINK
      get 'hit-counter' => 'application#hit_counter'
      # technically should be POST/PUT, but GET makes integration simpler
     ````
+
+Or try it out in `irb` with:
+
+```ruby
+require './spec/spec_helper'
+hc = HitCounter.get('cnn.com')
+```
 
 3. Add the hit-counter image tag to your site's HTML:
 

@@ -11,6 +11,8 @@ Gem::Specification.new do |s|
     "Google juice, that's why."
   s.homepage = 'https://github.com/ivanoblomov/hit_counter'
   s.authors = ['Roderick Monje']
+  s.cert_chain = ['certs/ivanoblomov.pem']
+  s.signing_key = File.expand_path('~/.ssh/gem-private_key.pem') if $PROGRAM_NAME =~ /gem\z/
 
   s.add_development_dependency 'rake', '>= 12.3.3', '~> 13.0'
   s.add_development_dependency 'rspec', '~> 3'
