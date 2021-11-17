@@ -58,10 +58,10 @@ describe HitCounter do
   end
   describe '#normalize_style_number' do
     context 'with nil' do
-      it { expect(described_class.normalize_style_number(nil)).to be_zero }
+      it { expect(described_class.send(:normalize_style_number, nil)).to be_zero }
     end
     context 'with empty string' do
-      it { expect(described_class.normalize_style_number('')).to be_zero }
+      it { expect(described_class.send(:normalize_style_number, '')).to be_zero }
     end
     context 'with number in range' do
       {
@@ -70,7 +70,7 @@ describe HitCounter do
       }.each do |input, output|
         context "with '#{input}'" do
           it do
-            expect(described_class.normalize_style_number(input)).to eq output
+            expect(described_class.send(:normalize_style_number, input)).to eq output
           end
         end
       end
@@ -84,7 +84,7 @@ describe HitCounter do
       }.each do |input, output|
         context "with '#{input}'" do
           it do
-            expect(described_class.normalize_style_number(input)).to eq output
+            expect(described_class.send(:normalize_style_number, input)).to eq output
           end
         end
       end
@@ -96,7 +96,7 @@ describe HitCounter do
       'http://www.nytimes.com' => 'http://www.nytimes.com'
     }.each do |input, output|
       context "with '#{input}'" do
-        it { expect(described_class.normalize_url(input)).to eq output }
+        it { expect(described_class.send(:normalize_url, input)).to eq output }
       end
     end
   end
