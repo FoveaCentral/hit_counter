@@ -16,8 +16,8 @@ class HitCounter
   include Mongoid::Timestamps
 
   # Mongo Config ===============================================================
-  field :url
   field :hits, type: Integer, default: 0
+  field :url
 
   # Validates the <code>HitCounter</code>'s URL.
   #
@@ -34,6 +34,7 @@ class HitCounter
     end
   end
 
+  validates :hits, numericality: { only_integer: true }
   validates :url, presence: true, url: true, uniqueness: true
 
   # Class methods ==============================================================
