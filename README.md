@@ -25,6 +25,15 @@ Ruby version of that old 90s chestnut, `<BLINK>`the web-site hit counter`</BLINK
       rake hit_counter:install
     ```
 
+    ### Security note
+
+    `HitCounter` is cryptographically signed. To insure the gem you install hasn’t been tampered with, add my public key as a trusted certificate and then install:
+
+    ```sh
+    gem cert --add <(curl -Ls https://raw.github.com/ivanoblomov/hit_counter/master/certs/ivanoblomov.pem)
+    gem install hit_counter -P HighSecurity
+    ```
+
 2. Add a controller action to your app.
 
     `application_controller.rb`
