@@ -30,7 +30,7 @@ class HitCounter
         uri.scheme
       )
     rescue Addressable::URI::InvalidURIError
-      record.errors[attribute] << 'Invalid URL'
+      record.errors.add attribute, 'Invalid URL'
     end
   end
 
