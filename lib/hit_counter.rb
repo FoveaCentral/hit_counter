@@ -129,19 +129,11 @@ class HitCounter
 end
 
 if defined? Rails
-  # Overriding Rails to include install task
+  # override Rails to include tasks
   class Railtie < Rails::Railtie
     rake_tasks do
-      namespace :hit_counter do
-        desc 'Install HitCounter into your app.'
-        task :install do
-          puts 'Installing required image files...'
-          system "rsync -ruv #{Gem.searcher.find('hit_counter').full_gem_path}"\
-            '/config .'
-          system "rsync -ruv #{Gem.searcher.find('hit_counter').full_gem_path}"\
-            '/public .'
-        end
-      end
+      path = File.expand_path(__dir__)
+      Dir.glob("#{path}/tasks/**/*.rake").each { |f| load f }
     end
   end
 end
