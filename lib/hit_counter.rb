@@ -139,13 +139,3 @@ class HitCounter
     value !~ %r{^http://} ? "http://#{value}" : value
   end
 end
-
-if defined? Rails
-  # override Rails to include tasks
-  class Railtie < Rails::Railtie
-    rake_tasks do
-      path = File.expand_path(__dir__)
-      Dir.glob("#{path}/tasks/**/*.rake").each { |f| load f }
-    end
-  end
-end
