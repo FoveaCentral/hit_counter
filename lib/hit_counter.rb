@@ -55,6 +55,18 @@ class HitCounter
     find_or_create_by args
   end
 
+  # Installs the required Mongoid configuration and image files.
+  #
+  # @return true
+  # @example
+  #   HitCounter.install
+  def self.install
+    puts 'Configuring Mongoid and installing image files...'
+    full_gem_path = Gem::Specification.find_by_name('hit_counter').full_gem_path
+    system "rsync -ruv #{full_gem_path}/config ."
+    system "rsync -ruv #{full_gem_path}/public ."
+  end
+
   # Instance methods: Overrides ================================================
 
   # Sets the number of hits.

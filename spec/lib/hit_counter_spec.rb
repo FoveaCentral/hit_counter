@@ -56,6 +56,13 @@ describe HitCounter do
       end
     end
   end
+  describe '.install' do
+    before do
+      expect_any_instance_of(Object).to receive(:system).twice.with match(/config|public/)
+    end
+
+    it('copies configuration files and images') { described_class.install }
+  end
   describe '#hits' do
     it { expect(subject.hits).to eq 0 }
 
