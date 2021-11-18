@@ -55,6 +55,18 @@ class HitCounter
     find_or_create_by args
   end
 
+  # Installs the required Mongoid configuration and image files.
+  #
+  # @return true
+  # @example
+  #   HitCounter.install
+  def self.install
+    puts 'Configuring Mongoid and installing image files...'
+    full_gem_path = Gem::Specification.find_by_name('hit_counter').full_gem_path
+    system "rsync -ruv #{full_gem_path}/config ."
+    system "rsync -ruv #{full_gem_path}/public ."
+  end
+
   # Instance methods: Overrides ================================================
 
   # Sets the number of hits.
@@ -125,15 +137,5 @@ class HitCounter
 
   private_class_method def self.normalize_url(value)
     value !~ %r{^http://} ? "http://#{value}" : value
-  end
-end
-
-if defined? Rails
-  # override Rails to include tasks
-  class Railtie < Rails::Railtie
-    rake_tasks do
-      path = File.expand_path(__dir__)
-      Dir.glob("#{path}/tasks/**/*.rake").each { |f| load f }
-    end
   end
 end
