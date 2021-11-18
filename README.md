@@ -1,6 +1,6 @@
 # HitCounter
 
-![Build status](https://github.com/ivanoblomov/hit_counter/workflows/test/badge.svg)
+[![Build status](https://github.com/ivanoblomov/hit_counter/workflows/test/badge.svg)](https://github.com/ivanoblomov/hit_counter/actions/workflows/test.yml)
 [![Code Climate](https://codeclimate.com/github/ivanoblomov/hit_counter.png)](https://codeclimate.com/github/ivanoblomov/hit_counter)
 [![Coveralls](https://coveralls.io/repos/ivanoblomov/hit_counter/badge.svg?branch=master&service=github)](https://coveralls.io/github/ivanoblomov/hit_counter?branch=master)
 [![Inch CI](https://inch-ci.org/github/ivanoblomov/hit_counter.svg?branch=master&amp;style=flat)](https://inch-ci.org/github/ivanoblomov/hit_counter)
