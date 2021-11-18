@@ -2,7 +2,5 @@
 
 namespace :hit_counter do
   desc 'Install HitCounter into your app.'
-  task :install do
-    HitCounter.install
-  end
+  task(:install) { HitCounter.install }
 end
