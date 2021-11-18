@@ -35,7 +35,7 @@ module TaskFormat
 end
 
 RSpec.configure do |config|
-  config.before(:suite) do
+  config.before(:all) do
     Dir.glob('lib/tasks/*.rake').each { |r| Rake::DefaultLoader.new.load r }
   end
 
