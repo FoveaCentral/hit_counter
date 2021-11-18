@@ -78,11 +78,11 @@ hc = HitCounter.get('cnn.com')
 
 ### Use an Existing Style
 
-| Name     | Image                                                                 |
-| -------- | --------------------------------------------------------------------- |
-| Celtic   | ![image of 3 in celtic style](/public/images/digits/celtic/3.png)     |
-| Odometer | ![image of 1 in odometer style](/public/images/digits/odometer/1.png) |
-| Scout    | ![image of 2 in scout style](/public/images/digits/scout/2.png)       |
+| Name     | Image                                                                 | Style number |
+| -------- | --------------------------------------------------------------------- | ------------ |
+| Celtic   | ![image of 1 in celtic style](/public/images/digits/celtic/1.png)     | 3            |
+| Odometer | ![image of 2 in odometer style](/public/images/digits/odometer/2.png) | 1            |
+| Scout    | ![image of 3 in scout style](/public/images/digits/scout/3.png)       | 2            |
 
 You can use one of the three included styles by specifying a different `style` param in the HTML:
 
