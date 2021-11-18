@@ -61,18 +61,18 @@ Ruby version of that old 90s chestnut, `<BLINK>`the web-site hit counter`</BLINK
      # technically should be POST/PUT, but GET makes integration simpler
     ````
 
+3. Add the hit-counter image tag to your site's HTML:
+
+    ```html
+      <img alt="Hit Counter" border="0" src="/hit-counter?url=https://cnn.com&style=1" />
+    ````
+
 Or try it out in `irb` with:
 
 ```ruby
 require './spec/spec_helper'
 hc = HitCounter.get('cnn.com')
 ```
-
-3. Add the hit-counter image tag to your site's HTML:
-
-    ```html
-      <img alt="Hit Counter" border="0" src="/hit-counter?url=https://cnn.com&style=1" />
-    ````
 
 ## Customizing the Hit-Counter Image
 
