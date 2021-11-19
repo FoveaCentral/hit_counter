@@ -27,10 +27,6 @@ jobs:
         mongodb-version: '4.4'
     - name: Run tests
       run: bundle exec rake
-    - name: Send coverage report to Code Climate
-      uses: amancevice/setup-code-climate@v0
-      with:
-        cc_test_reporter_id: ${{ secrets.CC_TEST_REPORTER_ID }}
     - run: cc-test-reporter after-build --coverage-input-type lcov
     - name: Send coverage report to Coveralls
       uses: coverallsapp/github-action@master
