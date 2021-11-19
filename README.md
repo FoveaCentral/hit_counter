@@ -2,7 +2,7 @@
 
 [![Build status](https://github.com/ivanoblomov/hit_counter/workflows/test/badge.svg)](https://github.com/ivanoblomov/hit_counter/actions/workflows/test.yml)
 [![Code Climate](https://codeclimate.com/github/ivanoblomov/hit_counter.png)](https://codeclimate.com/github/ivanoblomov/hit_counter)
-[![Coveralls](https://coveralls.io/repos/ivanoblomov/hit_counter/badge.svg?branch=master&service=github)](https://coveralls.io/github/ivanoblomov/hit_counter?branch=master)
+[![Coverage Status](https://coveralls.io/repos/github/FoveaCentral/hit_counter/badge.svg?branch=master)](https://coveralls.io/github/FoveaCentral/hit_counter?branch=master)
 [![Inch CI](https://inch-ci.org/github/ivanoblomov/hit_counter.svg?branch=master&amp;style=flat)](https://inch-ci.org/github/ivanoblomov/hit_counter)
 [![CII Best Practices](https://bestpractices.coreinfrastructure.org/projects/5375/badge)](https://bestpractices.coreinfrastructure.org/projects/5375)
 [![Gem Version](https://badge.fury.io/rb/hit_counter.svg)](https://badge.fury.io/rb/hit_counter)
