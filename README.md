@@ -1,9 +1,9 @@
 # HitCounter
 
-[![Build status](https://github.com/ivanoblomov/hit_counter/workflows/test/badge.svg)](https://github.com/ivanoblomov/hit_counter/actions/workflows/test.yml)
-[![Code Climate](https://codeclimate.com/github/ivanoblomov/hit_counter.png)](https://codeclimate.com/github/ivanoblomov/hit_counter)
-[![Coveralls](https://coveralls.io/repos/ivanoblomov/hit_counter/badge.svg?branch=master&service=github)](https://coveralls.io/github/ivanoblomov/hit_counter?branch=master)
-[![Inch CI](https://inch-ci.org/github/ivanoblomov/hit_counter.svg?branch=master&amp;style=flat)](https://inch-ci.org/github/ivanoblomov/hit_counter)
+[![Build status](https://github.com/FoveaCentral/hit_counter/workflows/test/badge.svg)](https://github.com/FoveaCentral/hit_counter/actions/workflows/test.yml)
+[![Code Climate](https://codeclimate.com/github/FoveaCentral/hit_counter.png)](https://codeclimate.com/github/FoveaCentral/hit_counter)
+[![Coveralls](https://coveralls.io/repos/FoveaCentral/hit_counter/badge.svg?branch=master&service=github)](https://coveralls.io/github/FoveaCentral/hit_counter?branch=master)
+[![Inch CI](https://inch-ci.org/github/FoveaCentral/hit_counter.svg?branch=master&amp;style=flat)](https://inch-ci.org/github/FoveaCentral/hit_counter)
 [![CII Best Practices](https://bestpractices.coreinfrastructure.org/projects/5375/badge)](https://bestpractices.coreinfrastructure.org/projects/5375)
 [![Gem Version](https://badge.fury.io/rb/hit_counter.svg)](https://badge.fury.io/rb/hit_counter)
 
@@ -30,7 +30,7 @@ Ruby version of that old 90s chestnut, `<BLINK>`the web-site hit counter`</BLINK
     `HitCounter` is cryptographically signed. To insure the gem you install hasn’t been tampered with, add my public key as a trusted certificate and then install:
 
     ```sh
-    gem cert --add <(curl -Ls https://raw.github.com/ivanoblomov/hit_counter/master/certs/ivanoblomov.pem)
+    gem cert --add <(curl -Ls https://raw.github.com/FoveaCentral/hit_counter/master/certs/ivanoblomov.pem)
     gem install hit_counter -P HighSecurity
     ```
 
