@@ -1,7 +1,7 @@
 # HitCounter
 
 [![Build status](https://github.com/FoveaCentral/hit_counter/workflows/test/badge.svg)](https://github.com/FoveaCentral/hit_counter/actions/workflows/test.yml)
-[![Code Climate](https://codeclimate.com/github/FoveaCentral/hit_counter.png)](https://codeclimate.com/github/FoveaCentral/hit_counter)
+[![Code Climate](https://codeclimate.com/github/FoveaCentral/hit_counter.svg)](https://codeclimate.com/github/FoveaCentral/hit_counter)
 [![Coveralls](https://coveralls.io/repos/FoveaCentral/hit_counter/badge.svg?branch=master&service=github)](https://coveralls.io/github/FoveaCentral/hit_counter?branch=master)
 [![CII Best Practices](https://bestpractices.coreinfrastructure.org/projects/5375/badge)](https://bestpractices.coreinfrastructure.org/projects/5375)
 [![Gem Version](https://badge.fury.io/rb/hit_counter.svg)](https://badge.fury.io/rb/hit_counter)
