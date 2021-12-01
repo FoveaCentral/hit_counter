@@ -24,6 +24,8 @@ class HitCounter
   # If the URI library can parse the value and the scheme is valid, then we
   # assume the url is valid.
   class UrlValidator < ActiveModel::EachValidator
+    private
+
     def validate_each(record, attribute, value)
       uri = Addressable::URI.parse value
       raise Addressable::URI::InvalidURIError unless %w[http https].include?(
@@ -116,6 +118,7 @@ class HitCounter
     save
   end
 
+  # Defines the available image styles as an array. Add yours to the end.
   STYLES = %w[odometer scout celtic].freeze
 
   private_class_method def self.cat_image(number, style_index, images = Magick::ImageList.new)
