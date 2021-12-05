@@ -4,7 +4,7 @@ require File.expand_path 'lib/version', __dir__
 Gem::Specification.new do |s|
   s.name = 'hit_counter'
   s.version = HitCounter::VERSION.dup
-  s.summary = 'Ruby version of that old 90s chestnut, the web-site hit counter.'
+  s.summary = 'Self-hosted Ruby version of that old 90s chestnut, the web-site hit counter.'
   s.description = 'Why roast this chestnut by that open fire, you ask? Cause '\
     'thousands and thousands of Internet vets are still using the one we '\
     "wrote in PHP eons ago and we don't want to be squandering any incidental "\

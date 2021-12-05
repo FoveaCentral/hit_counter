@@ -6,7 +6,7 @@
 [![CII Best Practices](https://bestpractices.coreinfrastructure.org/projects/5375/badge)](https://bestpractices.coreinfrastructure.org/projects/5375)
 [![Gem Version](https://badge.fury.io/rb/hit_counter.svg)](https://badge.fury.io/rb/hit_counter)
 
-Ruby version of that old 90s chestnut, `<BLINK>`the web-site hit counter`</BLINK>`.
+Self-hosted Ruby version of that old 90s chestnut, `<BLINK>`the web-site hit counter`</BLINK>`.
 
 ## Installation
 
