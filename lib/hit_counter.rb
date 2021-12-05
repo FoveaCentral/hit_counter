@@ -6,7 +6,7 @@ require 'rubygems'
 require 'bundler/setup'
 Bundler.require :default
 
-# Ruby version of that old 90s chestnut, <BLINK>the web-site hit counter</BLINK>
+# Self-hosted Ruby version of that old 90s chestnut, <BLINK>the web-site hit counter</BLINK>
 #
 # @example
 #   hc = HitCounter.get 'cnn.com'
