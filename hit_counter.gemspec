@@ -16,7 +16,7 @@ Gem::Specification.new do |s|
 
   s.add_runtime_dependency 'addressable', '~> 2'
   s.add_runtime_dependency 'bson_ext', '~> 1'
-  s.add_runtime_dependency 'mongoid', '>= 7', '< 9'
+  s.add_runtime_dependency 'mongoid', '>= 7', '< 10'
   s.add_runtime_dependency 'rmagick', '>= 2', '< 5'
 
   s.files         = `git ls-files`.split "\n"
