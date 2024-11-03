@@ -22,7 +22,6 @@ jobs:
       with:
         ruby-version: ${{ matrix.ruby-version }}
         bundler-cache: true # 'bundle install' and cache
-    - run: magick --version
     - run: bundle exec rake
     - uses: amancevice/setup-code-climate@main
       with:
