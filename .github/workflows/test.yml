@@ -16,16 +16,15 @@ jobs:
     steps:
     - name: Checkout code
       uses: actions/checkout@main
+    - name: Start MongoDB
+      uses: supercharge/mongodb-github-action@main
+      with:
+        mongodb-version: '4.4'
     - name: Set up Ruby ${{ matrix.ruby-version }}
       uses: ruby/setup-ruby@master
       with:
         ruby-version: ${{ matrix.ruby-version }}
         bundler-cache: true # 'bundle install' and cache
-    - name: Start MongoDB
-      uses: supercharge/mongodb-github-action@main
-      with:
-        mongodb-version: '4.4'
-    - name: Run tests
       run: bundle exec rake
     - name: Send Code Climate coverage
       uses: amancevice/setup-code-climate@main
