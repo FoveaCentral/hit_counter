@@ -125,7 +125,7 @@ class HitCounter
     return images.append(false) if number.blank?
 
     cat_image(number[1..-1], style_index, images <<
-      Magick::Image.read("#{Rails.root}/public/images/digits/"\
+      Magick::Image.read("#{Rails.root}/public/images/digits/" \
                          "#{STYLES[style_index]}/#{number[0..0]}.png").first)
   end
 
@@ -139,6 +139,6 @@ class HitCounter
   end
 
   private_class_method def self.normalize_url(value)
-    value !~ %r{^http://} ? "http://#{value}" : value
+    %r{^http://}.match?(value) ? value : "http://#{value}"
   end
 end

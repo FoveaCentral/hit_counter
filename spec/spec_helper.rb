@@ -11,7 +11,7 @@ require 'rspec'
 require 'hit_counter'
 
 Mongoid.load! 'config/mongoid.yml', :test
-Mongo::Logger.logger.level = ::Logger::WARN
+Mongo::Logger.logger.level = Logger::WARN
 
 # Stub Rails root during tests.
 module Rails
@@ -27,7 +27,7 @@ require 'rake'
 module TaskFormat
   extend ActiveSupport::Concern
   included do
-    let(:task_name) { self.class.top_level_description.sub(/\Arake /, '') }
+    let(:task_name) { self.class.top_level_description.delete_prefix('rake ') }
     let(:tasks) { Rake::Task }
     # Make the Rake task available as `task` in your examples:
     subject(:task) { tasks[task_name] }
