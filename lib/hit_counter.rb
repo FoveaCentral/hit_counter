@@ -2,6 +2,7 @@
 # SPDX-License-Identifier: MIT
 # frozen_string_literal: true
 
+require 'rmagick'
 require 'rubygems'
 require 'bundler/setup'
 Bundler.require :default
