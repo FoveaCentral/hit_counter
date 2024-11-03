@@ -125,7 +125,7 @@ class HitCounter
   private_class_method def self.cat_image(number, style_index, images = Magick::ImageList.new)
     return images.append(false) if number.blank?
 
-    cat_image(number[1..-1], style_index, images <<
+    cat_image(number[1..], style_index, images <<
       Magick::Image.read("#{Rails.root}/public/images/digits/" \
                          "#{STYLES[style_index]}/#{number[0..0]}.png").first)
   end
