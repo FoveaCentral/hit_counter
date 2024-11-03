@@ -16,7 +16,7 @@ Gem::Specification.new do |s|
 
   s.add_dependency 'addressable'
   s.add_dependency 'mongoid'
-  s.add_dependency 'rmagick'
+  s.add_dependency 'rmagick', '< 5'
 
   s.files         = `git ls-files`.split "\n"
   s.require_paths = ['lib']
