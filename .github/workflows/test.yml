@@ -25,7 +25,7 @@ jobs:
       with:
         ruby-version: ${{ matrix.ruby-version }}
         bundler-cache: true # 'bundle install' and cache
-      run: bundle exec rake
+    - run: bundle exec rake
     - name: Send Code Climate coverage
       uses: amancevice/setup-code-climate@main
       with:
