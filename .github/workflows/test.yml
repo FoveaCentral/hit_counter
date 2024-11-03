@@ -19,11 +19,11 @@ jobs:
       with:
         mongodb-version: '4.4'
     - uses: mfinelli/setup-imagemagick@v5
-    - run: magick --version
     - uses: ruby/setup-ruby@master
       with:
         ruby-version: ${{ matrix.ruby-version }}
         bundler-cache: true # 'bundle install' and cache
+    - run: magick --version
     - run: bundle exec rake
     - uses: amancevice/setup-code-climate@main
       with:
