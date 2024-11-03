@@ -14,28 +14,21 @@ jobs:
       matrix:
         ruby-version: [2.5, 2.6, 2.7, '3.0']
     steps:
-    - name: Checkout code
-      uses: actions/checkout@main
-    - name: Start MongoDB
-      uses: supercharge/mongodb-github-action@main
+    - uses: actions/checkout@main
+    - uses: supercharge/mongodb-github-action@main
       with:
         mongodb-version: '4.4'
-    - name: Set up Ruby ${{ matrix.ruby-version }}
-      uses: ruby/setup-ruby@master
+    - uses: ruby/setup-ruby@master
       with:
         ruby-version: ${{ matrix.ruby-version }}
         bundler-cache: true # 'bundle install' and cache
     - run: bundle exec rake
-    - name: Send Code Climate coverage
-      uses: amancevice/setup-code-climate@main
+    - uses: amancevice/setup-code-climate@main
       with:
         cc_test_reporter_id: ${{ secrets.CC_TEST_REPORTER_ID }}
     - run: cc-test-reporter after-build --coverage-input-type lcov
-    - name: Send Coveralls coverage
-      uses: coverallsapp/github-action@master
+    - uses: coverallsapp/github-action@master
       with:
         github-token: ${{ secrets.GITHUB_TOKEN }}
-    - name: Run RuboCop
-      run: bundle exec rubocop
-    - name: Run Inch
-      run: bundle exec inch --pedantic
+    - run: bundle exec rubocop
+    - run: bundle exec inch --pedantic
