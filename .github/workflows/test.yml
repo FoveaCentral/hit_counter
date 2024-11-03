@@ -19,6 +19,7 @@ jobs:
       with:
         mongodb-version: '4.4'
     - uses: mfinelli/setup-imagemagick@v5
+    - run: magick input.jpg -resize 100x100 output.jpg
     - uses: ruby/setup-ruby@master
       with:
         ruby-version: ${{ matrix.ruby-version }}
