@@ -18,7 +18,6 @@ jobs:
     - uses: supercharge/mongodb-github-action@main
       with:
         mongodb-version: '4.4'
-    - uses: mfinelli/setup-imagemagick@v5
     - uses: ruby/setup-ruby@master
       with:
         ruby-version: ${{ matrix.ruby-version }}
