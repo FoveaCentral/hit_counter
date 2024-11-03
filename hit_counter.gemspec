@@ -14,10 +14,9 @@ Gem::Specification.new do |s|
   s.cert_chain = ['certs/ivanoblomov.pem']
   s.signing_key = File.expand_path('~/.ssh/gem-private_key.pem') if $PROGRAM_NAME =~ /gem\z/
 
-  s.add_runtime_dependency 'addressable', '~> 2'
-  s.add_runtime_dependency 'bson_ext', '~> 1'
-  s.add_runtime_dependency 'mongoid', '>= 7', '< 10'
-  s.add_runtime_dependency 'rmagick', '>= 2', '< 5'
+  s.add_runtime_dependency 'addressable'
+  s.add_runtime_dependency 'mongoid'
+  s.add_runtime_dependency 'rmagick'
 
   s.files         = `git ls-files`.split "\n"
   s.require_paths = ['lib']
