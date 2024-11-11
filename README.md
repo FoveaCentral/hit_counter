@@ -4,6 +4,7 @@
 [![Code Climate](https://codeclimate.com/github/FoveaCentral/hit_counter.svg)](https://codeclimate.com/github/FoveaCentral/hit_counter)
 [![Coveralls](https://coveralls.io/repos/FoveaCentral/hit_counter/badge.svg?branch=master&service=github)](https://coveralls.io/github/FoveaCentral/hit_counter?branch=master)
 [![CII Best Practices](https://bestpractices.coreinfrastructure.org/projects/5375/badge)](https://bestpractices.coreinfrastructure.org/projects/5375)
+[![OpenSSF Scorecard](https://api.scorecard.dev/projects/github.com/FoveaCentral/hit_counter/badge)](https://scorecard.dev/viewer/?uri=github.com/FoveaCentral/hit_counter)
 [![Gem Version](https://badge.fury.io/rb/hit_counter.svg)](https://badge.fury.io/rb/hit_counter)
 
 Self-hosted Ruby version of that old 90s chestnut, `<BLINK>`the web-site hit counter`</BLINK>`.
