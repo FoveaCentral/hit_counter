@@ -1,9 +1,6 @@
-name: test
+name: Test
 on:
   push:
-    paths-ignore:
-      - '**.md'
-      - '**.txt'
 permissions: read-all
 jobs:
   test:
