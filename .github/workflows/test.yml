@@ -1,4 +1,6 @@
 name: test
+on:
+  push:
 permissions: read-all
 jobs:
   test:

@@ -1,4 +1,6 @@
 name: analyze
+on:
+  push:
 permissions: read-all
 jobs:
   scorecard:
