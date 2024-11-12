@@ -3,7 +3,7 @@
 [![Build status](https://github.com/FoveaCentral/hit_counter/workflows/test/badge.svg)](https://github.com/FoveaCentral/hit_counter/actions/workflows/test.yml)
 [![Code Climate](https://codeclimate.com/github/FoveaCentral/hit_counter.svg)](https://codeclimate.com/github/FoveaCentral/hit_counter)
 [![Coveralls](https://coveralls.io/repos/FoveaCentral/hit_counter/badge.svg?branch=master&service=github)](https://coveralls.io/github/FoveaCentral/hit_counter?branch=master)
-[![CII Best Practices](https://www.bestpractices.dev/projects/5375/badge)](https://www.bestpractices.dev/en/projects/5375)
+[![CII Best Practices](https://bestpractices.coreinfrastructure.org/projects/5375/badge)](https://bestpractices.coreinfrastructure.org/projects/5375)
 [![OpenSSF Scorecard](https://api.scorecard.dev/projects/github.com/FoveaCentral/hit_counter/badge)](https://scorecard.dev/viewer/?uri=github.com/FoveaCentral/hit_counter)
 [![Gem Version](https://badge.fury.io/rb/hit_counter.svg)](https://badge.fury.io/rb/hit_counter)
 
