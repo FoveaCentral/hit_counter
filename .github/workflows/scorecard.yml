@@ -1,9 +1,9 @@
-name: analyze
+name: Analyze
 on:
   push:
 permissions: read-all
 jobs:
-  scorecard:
+  Scorecard:
     environment: staging
     runs-on: ubuntu-latest
     permissions:
