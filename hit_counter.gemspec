@@ -20,31 +20,10 @@ Gem::Specification.new do |s|
   s.add_dependency 'rmagick'
 
   s.files = %w[
-    .document
-    .github/CODEOWNERS
-    .github/ISSUE_TEMPLATE/bug_report.md
-    .github/ISSUE_TEMPLATE/feature_request.md
-    .github/ISSUE_TEMPLATE/task.md
-    .github/PULL_REQUEST_TEMPLATE.md
-    .github/dependabot.yml
-    .github/workflows/push.yml
-    .github/workflows/scorecard.yml
-    .github/workflows/test.yml
-    .gitignore
-    .rspec
-    .rubocop.yml
-    .simplecov
-    CODE_OF_CONDUCT.md
-    CONTRIBUTING.md
     Gemfile
-    LICENSE.txt
-    README.md
     Rakefile
-    SECURITY.md
-    certs/ivanoblomov.pem
     config/initializers/mime_types.rb
     config/mongoid.yml
-    hit_counter.gemspec
     lib/hit_counter.rb
     lib/tasks/install.rake
     lib/version.rb
@@ -78,8 +57,6 @@ Gem::Specification.new do |s|
     public/images/digits/scout/7.png
     public/images/digits/scout/8.png
     public/images/digits/scout/9.png
-    spec/lib/hit_counter_spec.rb
-    spec/spec_helper.rb
   ]
   s.require_paths = ['lib']
   s.required_ruby_version = '>= 3.1'
