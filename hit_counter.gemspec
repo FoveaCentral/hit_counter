@@ -1,9 +1,8 @@
 # frozen_string_literal: true
 
-require File.expand_path 'lib/version', __dir__
 Gem::Specification.new do |s|
   s.name = 'hit_counter'
-  s.version = HitCounter::VERSION.dup
+  s.version = '1.0.0'
   s.licenses = ['MIT']
   s.summary = 'Self-hosted Ruby version of that old 90s chestnut, the web-site hit counter.'
   s.description = 'Why roast this chestnut by that open fire, you ask? Cause ' \
@@ -19,8 +18,44 @@ Gem::Specification.new do |s|
   s.add_dependency 'mongoid'
   s.add_dependency 'rmagick'
 
-  s.files         = `git ls-files`.split "\n"
-  s.require_paths = ['lib']
+  s.files = %w[
+    Gemfile
+    Rakefile
+    config/initializers/mime_types.rb
+    config/mongoid.yml
+    lib/hit_counter.rb
+    lib/tasks/install.rake
+    public/images/digits/celtic/0.png
+    public/images/digits/celtic/1.png
+    public/images/digits/celtic/2.png
+    public/images/digits/celtic/3.png
+    public/images/digits/celtic/4.png
+    public/images/digits/celtic/5.png
+    public/images/digits/celtic/6.png
+    public/images/digits/celtic/7.png
+    public/images/digits/celtic/8.png
+    public/images/digits/celtic/9.png
+    public/images/digits/odometer/0.png
+    public/images/digits/odometer/1.png
+    public/images/digits/odometer/2.png
+    public/images/digits/odometer/3.png
+    public/images/digits/odometer/4.png
+    public/images/digits/odometer/5.png
+    public/images/digits/odometer/6.png
+    public/images/digits/odometer/7.png
+    public/images/digits/odometer/8.png
+    public/images/digits/odometer/9.png
+    public/images/digits/scout/0.png
+    public/images/digits/scout/1.png
+    public/images/digits/scout/2.png
+    public/images/digits/scout/3.png
+    public/images/digits/scout/4.png
+    public/images/digits/scout/5.png
+    public/images/digits/scout/6.png
+    public/images/digits/scout/7.png
+    public/images/digits/scout/8.png
+    public/images/digits/scout/9.png
+  ]
   s.required_ruby_version = '>= 3.1'
   s.metadata['rubygems_mfa_required'] = 'true'
 end
