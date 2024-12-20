@@ -1,6 +1,5 @@
 # frozen_string_literal: true
 
-require File.expand_path 'lib/version', __dir__
 Gem::Specification.new do |s|
   s.name = 'hit_counter'
   s.version = '1.0.0'
