@@ -3,7 +3,7 @@
 require File.expand_path 'lib/version', __dir__
 Gem::Specification.new do |s|
   s.name = 'hit_counter'
-  s.version = HitCounter::VERSION.dup
+  s.version = '1.0.0'
   s.licenses = ['MIT']
   s.summary = 'Self-hosted Ruby version of that old 90s chestnut, the web-site hit counter.'
   s.description = 'Why roast this chestnut by that open fire, you ask? Cause ' \
@@ -26,7 +26,6 @@ Gem::Specification.new do |s|
     config/mongoid.yml
     lib/hit_counter.rb
     lib/tasks/install.rake
-    lib/version.rb
     public/images/digits/celtic/0.png
     public/images/digits/celtic/1.png
     public/images/digits/celtic/2.png
