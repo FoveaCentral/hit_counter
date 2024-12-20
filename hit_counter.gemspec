@@ -56,7 +56,6 @@ Gem::Specification.new do |s|
     public/images/digits/scout/8.png
     public/images/digits/scout/9.png
   ]
-  s.require_paths = ['lib']
   s.required_ruby_version = '>= 3.1'
   s.metadata['rubygems_mfa_required'] = 'true'
 end
