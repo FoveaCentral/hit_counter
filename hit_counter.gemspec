@@ -2,7 +2,7 @@
 
 Gem::Specification.new do |s|
   s.name = 'hit_counter'
-  s.version = '1.0.1'
+  s.version = '1.0.2'
   s.licenses = ['MIT']
   s.summary = 'Self-hosted Ruby version of that old 90s chestnut, the web-site hit counter.'
   s.description = 'Why roast this chestnut by that open fire, you ask? Cause ' \
@@ -12,7 +12,6 @@ Gem::Specification.new do |s|
   s.homepage = 'https://github.com/FoveaCentral/hit_counter'
   s.authors = ['Roderick Monje']
   s.cert_chain = ['certs/ivanoblomov.pem']
-  s.signing_key = File.expand_path('~/.ssh/gem-private_key.pem') if $PROGRAM_NAME.end_with?('gem')
 
   s.add_dependency 'addressable'
   s.add_dependency 'mongoid'
