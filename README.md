@@ -109,4 +109,4 @@ Complete RDoc documentation is available at [RubyDoc.info](https://www.rubydoc.i
 
 ## Copyright
 
-Copyright © 2011-2024 Roderick Monje. See LICENSE.txt for further details.
+Copyright © 2011-2025 Roderick Monje. See LICENSE.txt for further details.
