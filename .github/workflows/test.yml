@@ -1,7 +1,9 @@
 name: Test
 on:
   push:
-permissions: read-all
+permissions:
+  contents: read
+  id-token: write
 jobs:
   test:
     environment: staging
@@ -22,10 +24,12 @@ jobs:
     - run: bundle exec rake
     - run: bundle exec rubocop
     - run: bundle exec inch --pedantic
-    - uses: amancevice/setup-code-climate@0daf2985a225e8ac15975b4d233010e94d65b76a
+    - uses: qltysh/qlty-action/coverage@v1
       with:
-        cc_test_reporter_id: ${{ secrets.CC_TEST_REPORTER_ID }}
-    - run: cc-test-reporter after-build --coverage-input-type lcov
+        codeclimate-test-reporter-id: ${{ secrets.CC_TEST_REPORTER_ID }}
+        command: after-build --coverage-input-type lcov
+        oidc: true
+        files: coverage/lcov.info
     - uses: coverallsapp/github-action@cfd0633edbd2411b532b808ba7a8b5e04f76d2c8
       with:
         github-token: ${{ secrets.GITHUB_TOKEN }}
