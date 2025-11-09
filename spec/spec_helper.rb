@@ -26,6 +26,7 @@ require 'rake'
 # https://dev.to/cassidycodes/how-to-test-rake-tasks-with-rspec-without-rails-3mhb
 module TaskFormat
   extend ActiveSupport::Concern
+
   included do
     let(:task_name) { self.class.top_level_description.delete_prefix('rake ') }
     let(:tasks) { Rake::Task }
