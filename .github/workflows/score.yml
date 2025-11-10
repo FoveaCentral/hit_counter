@@ -1,4 +1,4 @@
-name: Analyze
+name: Score
 on:
   push:
 permissions: read-all
