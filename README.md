@@ -1,7 +1,7 @@
 # HitCounter
 
 [![Build status](https://github.com/FoveaCentral/hit_counter/workflows/test/badge.svg)](https://github.com/FoveaCentral/hit_counter/actions/workflows/test.yml)
-[![Maintainability](https://qlty.sh/gh/FoveaCentral/projects/hit_counter/maintainability.svg)](https://qlty.sh/gh/FoveaCentral/projects/hit_counter)[![Coverage Status](https://coveralls.io/repos/github/FoveaCentral/hit_counter/badge.svg?branch=main&kill_cache=1)](https://coveralls.io/github/FoveaCentral/hit_counter?branch=main)
+[![Maintainability](https://qlty.sh/gh/FoveaCentral/projects/hit_counter/maintainability.svg)](https://qlty.sh/gh/FoveaCentral/projects/hit_counter)
 [![Coveralls](https://coveralls.io/repos/FoveaCentral/hit_counter/badge.svg?branch=master&service=github)](https://coveralls.io/github/FoveaCentral/hit_counter?branch=master)
 [![CII Best Practices](https://www.bestpractices.dev/projects/5375/badge)](https://www.bestpractices.dev/en/projects/5375)
 [![OpenSSF Scorecard](https://api.scorecard.dev/projects/github.com/FoveaCentral/hit_counter/badge)](https://scorecard.dev/viewer/?uri=github.com/FoveaCentral/hit_counter)
