@@ -30,7 +30,7 @@ jobs:
     - uses: qltysh/qlty-action/coverage@v1
       with:
         codeclimate-test-reporter-id: ${{ secrets.CC_TEST_REPORTER_ID }}
-        command: after-build --coverage-input-type lcov
+        command: after-build
         oidc: true
         files: coverage/lcov.info
     - uses: coverallsapp/github-action@cfd0633edbd2411b532b808ba7a8b5e04f76d2c8
