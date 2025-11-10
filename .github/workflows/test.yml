@@ -32,7 +32,7 @@ jobs:
     - run: bundle exec rake
     - run: bundle exec rubocop
     - run: bundle exec inch --pedantic
-    - uses: qltysh/qlty-action/coverage@a2277a908db90c4c868832fb9204521fb940fdb4 # v1
+    - uses: qltysh/qlty-action/coverage@a19242102d17e497f437d7466aa01b528537e899 # v2.2.0
       with:
         codeclimate-test-reporter-id: ${{ secrets.CC_TEST_REPORTER_ID }}
         oidc: true
