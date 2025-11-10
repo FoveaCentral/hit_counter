@@ -28,4 +28,4 @@ What problem does this pull request solve? This should be close to the goal of t
   end
 ```
 
-Signed-off-by: YOUR NAME <YOUR.EMAIL@EXAMPLE.COM>
+Signed-off-by: Roderick Monje <rod@foveacentral.com>
