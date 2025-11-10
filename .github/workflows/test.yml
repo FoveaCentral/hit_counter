@@ -17,6 +17,9 @@ jobs:
     - uses: supercharge/mongodb-github-action@5a87bd81f88e2a8b195f8b7b656f5cda1350815a
       with:
         mongodb-version: '4.4'
+    - run: |
+        sudo apt-get update
+        sudo apt-get install -y libmagickwand-dev
     - uses: ruby/setup-ruby@a2bbe5b1b236842c1cb7dd11e8e3b51e0a616acc
       with:
         ruby-version: ${{ matrix.ruby-version }}
@@ -27,7 +30,6 @@ jobs:
     - uses: qltysh/qlty-action/coverage@v1
       with:
         codeclimate-test-reporter-id: ${{ secrets.CC_TEST_REPORTER_ID }}
-        command: after-build --coverage-input-type lcov
         oidc: true
         files: coverage/lcov.info
     - uses: coverallsapp/github-action@cfd0633edbd2411b532b808ba7a8b5e04f76d2c8
