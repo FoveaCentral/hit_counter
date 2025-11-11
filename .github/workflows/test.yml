@@ -19,7 +19,7 @@ jobs:
         egress-policy: audit
 
     - uses: actions/checkout@08c6903cd8c0fde910a37f88322edcfb5dd907a8
-    - uses: supercharge/mongodb-github-action@5a87bd81f88e2a8b195f8b7b656f5cda1350815a
+    - uses: supercharge/mongodb-github-action@315db7fe45ac2880b7758f1933e6e5d59afd5e94
       with:
         mongodb-version: '4.4'
     - run: |
