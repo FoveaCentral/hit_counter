@@ -4,10 +4,10 @@
 
 [Dependabot](https://docs.github.com/en/code-security/supply-chain-security/keeping-your-dependencies-updated-automatically/about-dependabot-version-updates) automatically [patches known vulnerabilities](https://github.com/FoveaCentral/hit_counter/pulls?q=is%3Apr+is%3Aclosed+author%3Aapp%2Fdependabot).
 
-| Version      | Supported          |
-| ------------ | ------------------ |
-| 1.0.6-rc.4   | :white_check_mark: |
-| < 1.0.6-rc.4 | :x:                |
+| Version | Supported          |
+| ------- | ------------------ |
+| 1.0.6   | :white_check_mark: |
+| < 1.0.6 | :x:                |
 
 ## Reporting a Vulnerability
 
