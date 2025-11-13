@@ -20,6 +20,9 @@ jobs:
           egress-policy: audit
 
       - uses: actions/checkout@08c6903cd8c0fde910a37f88322edcfb5dd907a8
+      - run: |
+          sudo apt-get update
+          sudo apt-get install -y libmagickwand-dev
       - uses: ruby/setup-ruby@d5126b9b3579e429dd52e51e68624dda2e05be25
         with:
           bundler-cache: true
