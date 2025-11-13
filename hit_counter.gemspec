@@ -2,7 +2,7 @@
 
 Gem::Specification.new do |s|
   s.name = 'hit_counter'
-  s.version = '1.0.5'
+  s.version = '1.0.6-rc.3'
   s.licenses = ['MIT']
   s.summary = 'Self-hosted Ruby version of that old 90s chestnut, the web-site hit counter.'
   s.description = 'Why roast this chestnut by that open fire, you ask? Cause ' \
