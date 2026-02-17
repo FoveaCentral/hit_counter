@@ -1,6 +1,6 @@
 # HitCounter
 
-[![Build status](https://github.com/FoveaCentral/hit_counter/workflows/test/badge.svg)](https://github.com/FoveaCentral/hit_counter/actions/workflows/test.yml)
+[![Test](https://github.com/FoveaCentral/hit_counter/actions/workflows/test.yml/badge.svg)](https://github.com/FoveaCentral/hit_counter/actions/workflows/test.yml)
 [![Maintainability](https://qlty.sh/gh/FoveaCentral/projects/hit_counter/maintainability.svg)](https://qlty.sh/gh/FoveaCentral/projects/hit_counter)
 [![Coveralls](https://coveralls.io/repos/FoveaCentral/hit_counter/badge.svg?branch=master&service=github)](https://coveralls.io/github/FoveaCentral/hit_counter?branch=master)
 [![CII Best Practices](https://www.bestpractices.dev/projects/5375/badge)](https://www.bestpractices.dev/en/projects/5375)
