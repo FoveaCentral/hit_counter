@@ -5,7 +5,6 @@
 require "#{File.dirname(__FILE__)}/../spec_helper"
 
 JAVASCRIPT_HACK = %q(eval("console.log('All your base belong to us!')"))
-# rubocop:disable Metrics/BlockLength
 describe HitCounter do
   subject(:hit_counter) { described_class.get 'www.google.com' }
 
@@ -170,4 +169,3 @@ describe HitCounter do
     end
   end
 end
-# rubocop:enable Metrics/BlockLength
