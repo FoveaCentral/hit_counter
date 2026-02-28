@@ -24,7 +24,9 @@ require 'rake'
 
 # load rake tasks
 # https://dev.to/cassidycodes/how-to-test-rake-tasks-with-rspec-without-rails-3mhb
+# rubocop:disable Style/OneClassPerFile
 module TaskFormat
+  # rubocop:enable Style/OneClassPerFile
   extend ActiveSupport::Concern
 
   included do
@@ -54,8 +56,10 @@ RSpec.configure do |config|
   original_stdout = $stdout
   config.before(:all) do
     # Redirect stderr and stdout
+    # rubocop:disable Style/FileOpen
     $stderr = File.open(File::NULL, 'w')
     $stdout = File.open(File::NULL, 'w')
+    # rubocop:enable Style/FileOpen
   end
   config.after(:all) do
     $stderr = original_stderr
