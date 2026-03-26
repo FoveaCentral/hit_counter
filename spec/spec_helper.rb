@@ -56,10 +56,8 @@ RSpec.configure do |config|
   original_stdout = $stdout
   config.before(:all) do
     # Redirect stderr and stdout
-    # rubocop:disable Style/FileOpen
     $stderr = File.open(File::NULL, 'w')
     $stdout = File.open(File::NULL, 'w')
-    # rubocop:enable Style/FileOpen
   end
   config.after(:all) do
     $stderr = original_stderr
