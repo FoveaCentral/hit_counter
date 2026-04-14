@@ -24,9 +24,7 @@ require 'rake'
 
 # load rake tasks
 # https://dev.to/cassidycodes/how-to-test-rake-tasks-with-rspec-without-rails-3mhb
-# rubocop:disable Style/OneClassPerFile
 module TaskFormat
-  # rubocop:enable Style/OneClassPerFile
   extend ActiveSupport::Concern
 
   included do
