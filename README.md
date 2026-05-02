@@ -103,4 +103,4 @@ Complete RDoc documentation is available at [RubyDoc.info](https://www.rubydoc.i
 
 ## [Contributing to HitCounter](CONTRIBUTING.md)
 
-Copyright © 2011-2025 Roderick Monje. See LICENSE.txt for further details.
+Copyright © 2011-2026 Roderick Monje. See LICENSE.txt for further details.
