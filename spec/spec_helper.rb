@@ -12,6 +12,7 @@ require 'hit_counter'
 
 Mongoid.load! 'config/mongoid.yml', :test
 Mongo::Logger.logger.level = Logger::WARN
+SimpleCov.start
 
 # Stub Rails root during tests.
 module Rails
