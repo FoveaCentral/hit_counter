@@ -12,4 +12,3 @@ SimpleCov.formatters = SimpleCov::Formatter::MultiFormatter.new(
     SimpleCov::Formatter::LcovFormatter
   ]
 )
-SimpleCov.start
