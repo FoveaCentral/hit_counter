@@ -27,6 +27,6 @@ jobs:
           sudo apt-get install -y libmagickwand-dev
       - uses: ruby/setup-ruby@95ef2b042f9d7a56d8268cba8559e2842e2ad01b
         with:
-          bundler-cache: ${{ github.event_name != 'pull_request' }}
+          bundler-cache: false
           ruby-version: ruby
       - uses: rubygems/release-gem@052cc82692552de3ef2b81fd670e41d13cba8092
