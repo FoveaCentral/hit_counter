@@ -34,8 +34,8 @@ jobs:
     - run: bundle exec inch --pedantic
     - uses: qltysh/qlty-action/coverage@08a0a862c159eae9b9003081da6663d96efef637 # v2.3.0
       with:
-        oidc: true
         files: coverage/lcov.info
+        oidc: true
     - uses: coverallsapp/github-action@5cbfd81b66ca5d10c19b062c04de0199c215fb6e
       with:
         github-token: ${{ secrets.GITHUB_TOKEN }}
