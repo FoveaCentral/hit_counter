@@ -130,13 +130,12 @@ describe HitCounter do
         '1' => 0,
         '3' => 2
       }.each do |input, output|
-        # rubocop:disable RSpec/NestedGroups
+        # rubocop:disable-next RSpec/NestedGroups
         context "with '#{input}'" do
           it do
             expect(described_class.send(:normalize_style_number, input)).to eq output
           end
         end
-        # rubocop:enable RSpec/NestedGroups
       end
     end
 
@@ -147,13 +146,12 @@ describe HitCounter do
         '4' => 0,
         '34' => 0
       }.each do |input, output|
-        # rubocop:disable RSpec/NestedGroups
+        # rubocop:disable-next RSpec/NestedGroups
         context "with '#{input}'" do
           it do
             expect(described_class.send(:normalize_style_number, input)).to eq output
           end
         end
-        # rubocop:enable RSpec/NestedGroups
       end
     end
   end
