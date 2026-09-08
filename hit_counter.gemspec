@@ -55,5 +55,8 @@ Gem::Specification.new do |s|
     public/images/digits/scout/9.png
   ]
   s.required_ruby_version = '>= 3.1'
-  s.metadata['rubygems_mfa_required'] = 'true'
+  s.metadata = {
+    'funding_uri' => 'https://github.com/sponsors/ivanoblomov',
+    'rubygems_mfa_required' => 'true'
+  }
 end
