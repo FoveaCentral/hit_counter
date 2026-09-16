@@ -29,4 +29,5 @@ jobs:
         with:
           bundler-cache: false
           ruby-version: ruby
+      - run: bundle install
       - uses: rubygems/release-gem@7f9650160c1a4e7989fdc9855807bdbd421d8b6b
