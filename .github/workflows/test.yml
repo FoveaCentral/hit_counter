@@ -25,7 +25,7 @@ jobs:
     - run: |
         sudo apt-get update
         sudo apt-get install -y libmagickwand-dev
-    - uses: ruby/setup-ruby@20eb24b0d509e2b9ed9b6d42ddfeb992915e0564
+    - uses: ruby/setup-ruby@f9c4492e86def3e644ab32a0ef185eda5b0c20d0
       with:
         ruby-version: ${{ matrix.ruby-version }}
         bundler-cache: true # 'bundle install' and cache
